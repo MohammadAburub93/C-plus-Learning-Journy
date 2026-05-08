@@ -3,14 +3,9 @@ using namespace std;
 
 int main()
 {
-	//This code just to learn making comments in C++
-	cout << "Mohammad Aburub" << endl << endl ;
-	cout << "This is my first C++ program\n";
+	cout << "M1\tM2 \n";
+	cout << "M3\tM4";
 
-	/*
-	I can use different ways to make comments.
-	just like this
-	*/
 
 	return 0;
 }
