@@ -3,9 +3,11 @@ using namespace std;
 
 int main()
 {
-	cout << "M1\tM2 \n";
-	cout << "M3\tM4";
+	cout << "Dear Sir\\Madam,\n\n";
 
+	cout << "How are you?\n\n";
+
+	cout << "My name is \"Mohammad\", nice to meet you.\n\n";
 
 	return 0;
 }
