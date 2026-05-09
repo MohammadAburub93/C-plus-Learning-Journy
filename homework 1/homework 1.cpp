@@ -28,4 +28,6 @@ int main()
 	cout << "Married: " << marital_s << endl << endl;
 	cout << "******************************\n\n";
 
+	return 0;
+
 }
