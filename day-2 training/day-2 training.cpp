@@ -3,11 +3,10 @@ using namespace std;
 
 int main()
 {
-	cout << "Dear Sir\\Madam,\n\n";
+	cout << "Ali\tAhmad\tLina\n\n";
 
-	cout << "How are you?\n\n";
+	cout << "Fadi\tZain\tMona\n\n";
 
-	cout << "My name is \"Mohammad\", nice to meet you.\n\n";
 
 	return 0;
 }
