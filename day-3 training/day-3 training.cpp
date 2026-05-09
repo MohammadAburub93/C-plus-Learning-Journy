@@ -2,22 +2,11 @@
 using namespace std;
 
 
-
 int main()
 {
-	int myNumber = 45;
-	float myFloatNumber = 7.77;
-	double myDoubleNumber = 32.26598652;
-	char myLetter = 'M';
-	string myText = "Mohammad";
-	bool myBoolean = true;
+	char char1 = 'A', char2 = 'B', char3 = 'C';
 
-
-	cout << myNumber << endl;
-
-	myNumber = 27;
-
-	cout << "My number is " << myNumber << endl;
+	cout << char1 << char2 << char3 << " reversed is " << char3 << char2 << char1 << endl;
 
 	return 0;
 }
