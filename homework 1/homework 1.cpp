@@ -4,7 +4,8 @@ using namespace std;
 int main()
 {
 	string name, city, country;
-	int age, monthly_salary, yearly_salary;
+	int age;
+	float monthly_salary, yearly_salary;
 	char gender;
 	bool marital_s;
 
