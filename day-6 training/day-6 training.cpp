@@ -5,20 +5,12 @@ int main()
 {
 	short A = 10, B = 20;
 
-	A += B;
-	cout << "A = " << A << endl;
-
-	A -= B;
-	cout << "A = " << A << endl;
-
-	A *= B;
-	cout << "A = " << A << endl;
-
-	A /= B;
-	cout << "A = " << A << endl;
-
-	A %= B;
-	cout << "A = " << A << endl;
+	cout << (A == B) << endl;
+	cout << (A != B) << endl;
+	cout << (A > B) << endl;
+	cout << (A < B) << endl;
+	cout << (A >= B) << endl;
+	cout << (A <= B) << endl;
  
 	return 0;
 }
