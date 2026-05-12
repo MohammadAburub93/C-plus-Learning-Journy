@@ -3,17 +3,22 @@ using namespace std;
 
 int main()
 {
-	short A = 10;
-	short B = A++;
+	short A = 10, B = 20;
 
+	A += B;
 	cout << "A = " << A << endl;
-	cout << "B = " << B << endl;
 
-	B = ++A;
-
+	A -= B;
 	cout << "A = " << A << endl;
-	cout << "B = " << B << endl;
 
+	A *= B;
+	cout << "A = " << A << endl;
+
+	A /= B;
+	cout << "A = " << A << endl;
+
+	A %= B;
+	cout << "A = " << A << endl;
  
 	return 0;
 }
