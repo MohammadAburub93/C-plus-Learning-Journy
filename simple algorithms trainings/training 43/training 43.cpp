@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
 int main()
@@ -19,7 +21,7 @@ int main()
 
 	sec = remainder_sec;
 
-	cout << "This value of second in form of days:hours:minutes:seconds is: " << days << ":" << hours << ":" << min << ":" << sec << endl;
+	cout << "This value of second in form of days:hours:minutes:seconds is: " << round(days) << ":" << round(hours) << ":" << round(min) << ":" << round(sec) << endl;
 	
 
 	return 0;
