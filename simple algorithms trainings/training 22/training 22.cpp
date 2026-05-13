@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
 int main()
@@ -12,9 +14,9 @@ int main()
 	cout << "Please enter the triangle base length." << endl;
 	cin >> b;
 
-	area = PI * ((b*b) /4) * ((2 * a - b) / (2 * a + b));
+	area = PI * (pow(b, 2) /4) * ((2 * a - b) / (2 * a + b));
 
-	cout << "The area of the circle is: " << area << endl;
+	cout << "The area of the circle is: " << ceil(area) << endl;
 
 	return 0;
 
