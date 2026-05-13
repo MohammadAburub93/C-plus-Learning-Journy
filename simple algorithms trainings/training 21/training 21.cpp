@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
 int main()
@@ -9,9 +11,9 @@ int main()
 	cout << "Please enter the circumference value." << endl;
 	cin >> l;
 
-	area = (l * l) / (4 * PI);
+	area = (pow(l, 2) / (4 * PI));
 
-	cout << "The area of the circle is: " << area << endl;
+	cout << "The area of the circle is: " << ceil(area) << endl;
 
 	return 0;
 
