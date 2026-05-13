@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
 int main()
@@ -21,7 +23,7 @@ int main()
 
 	total_sec = (days * 86400) + (hours * 3600) + (min * 60) + sec;
 
-	cout << "The total second of your task is: " << total_sec << endl;
+	cout << "The total second of your task is: " << round(total_sec) << endl;
 
 
 	return 0;
