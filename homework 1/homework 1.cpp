@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+enum gender { male, female };
+enum m_status { single, married };
+enum fav_color { red, yellow, green, blue, orange };
+
 struct p_info
 {
 	string name;
@@ -8,8 +12,9 @@ struct p_info
 	string country;
 	short int age;
 	float monthly_salary;
-	char gender;
-	bool marital_s;
+	gender my_gender;
+	m_status marital_s;
+	fav_color my_color;
 };
 
 int main()
@@ -31,11 +36,9 @@ int main()
 	cout << "Please enter your monthly salary?" << endl;
 	cin >> person_1.monthly_salary;
 
-	cout << "Please enter your gender as M for male and F for female?" << endl;
-	cin >> person_1.gender;
-
-	cout << "Please enter your marital status as 1 for married and 0 for single?" << endl;
-	cin >> person_1.marital_s;
+	person_1.my_gender = gender::male;
+	person_1.marital_s = m_status::single;
+	person_1.my_color = fav_color::blue;
 
 	cout << "******************************\n\n";
 	cout << "Name: " << person_1.name << "." << endl;
@@ -44,8 +47,9 @@ int main()
 	cout << "Country: " << person_1.country << "." << endl;
 	cout << "Monthly Salary: " << person_1.monthly_salary << endl;
 	cout << "Yearly Salary: " << person_1.monthly_salary * 12 << endl;
-	cout << "Gender: " << person_1.gender << endl;
-	cout << "Married: " << person_1.marital_s << endl << endl;
+	cout << "Gender: " << person_1.my_gender << endl;
+	cout << "Married: " << person_1.marital_s << endl;
+	cout << "Favorate color: " << person_1.my_color << endl << endl;
 	cout << "******************************\n\n";
 
 	return 0;
