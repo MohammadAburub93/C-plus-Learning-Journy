@@ -3,7 +3,7 @@ using namespace std;
 
 enum gender { male, female };
 enum m_status { single, married };
-enum fav_color { red, yellow, green, blue, orange };
+enum fav_color { red, yellow, green, blue, orange, purple, indigo, cyan };
 
 struct p_info
 {
@@ -14,7 +14,7 @@ struct p_info
 	float monthly_salary;
 	gender my_gender;
 	m_status marital_s;
-	fav_color my_color;
+	fav_color my_color; 
 };
 
 int main()
