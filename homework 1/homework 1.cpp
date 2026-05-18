@@ -17,7 +17,7 @@ struct p_info
 	fav_color my_color; 
 };
 
-int main()
+void info_card()
 {
 	p_info person_1;
 
@@ -25,7 +25,7 @@ int main()
 	cin >> person_1.name;
 
 	cout << "Please enter your age in numbers?" << endl;
-    cin >> person_1.age;
+	cin >> person_1.age;
 
 	cout << "Please enter your city name?" << endl;
 	cin >> person_1.city;
@@ -51,6 +51,13 @@ int main()
 	cout << "Married: " << person_1.marital_s << endl;
 	cout << "Favorate color: " << person_1.my_color << endl << endl;
 	cout << "******************************\n\n";
+}
+
+
+
+int main()
+{
+	info_card();
 
 	return 0;
 
