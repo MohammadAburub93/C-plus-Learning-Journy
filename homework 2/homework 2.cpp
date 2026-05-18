@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int main()
+
+void add()
 {
 	float num1, num2, num3;
 
@@ -19,6 +20,10 @@ int main()
 	cout << num3 << endl;
 	cout << "__________________\n\n";
 	cout << "Total = " << num1 + num2 + num3 << endl;
+}
+int main()
+{
+	add();
 
 	return 0;
 }
