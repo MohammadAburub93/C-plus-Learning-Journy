@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int main()
+
+void age_calc()
 {
 	short int age;
 
@@ -9,6 +10,10 @@ int main()
 	cin >> age;
 
 	cout << "After 5 years you will be " << age + 5 << " years old.";
+}
+int main()
+{
+	age_calc();
 
 	return 0;
 }
