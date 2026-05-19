@@ -2,43 +2,26 @@
 
 using namespace std;
 
-void my_sum_procedure()
+
+float my_sum_function(float num_1, float num_2)
 {
-	float num_1, num_2;
-
-	cout << "Please enter number 1?" << endl;
-	cin >> num_1;
-
-	cout << "Please enter number 2?" << endl;
-	cin >> num_2;
-
-	cout << "***************************" << endl;
-	cout << num_1 + num_2 << endl << endl;
-}
-
-float my_sum_function()
-{
-	float num_1, num_2;
-
-	cout << "Please enter number 1?" << endl;
-	cin >> num_1;
-
-	cout << "Please enter number 2?" << endl;
-	cin >> num_2;
-
 	return num_1 + num_2;
 
 }
 
 int main()
 {
-	float result;
+	float num_1, num_2, result;
 
-	my_sum_procedure();
+	cout << "Please enter number1?" << endl;
+	cin >> num_1;
 
-	result = my_sum_function();
+	cout << "Please enter number2?" << endl;
+	cin >> num_2;
 
-	cout << "***************************" << endl << result << endl;
+	result = my_sum_function(num_1 , num_2);
+
+	cout << result << endl;
 
 	return 0;
 }
