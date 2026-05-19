@@ -1,6 +1,17 @@
 #include <iostream>
 using namespace std;
 
+
+short int num_swap(short a, short b)
+{
+
+	b = a;
+
+	return b;
+}
+
+
+
 int main()
 {
 	short int a, b, swapped_a, swapped_b;
@@ -12,7 +23,7 @@ int main()
 	cin >> b;
 
 	swapped_a = b;
-	swapped_b = a;
+	swapped_b = num_swap(a, b);
 
 	cout << "the first number you pick is: " << a << " ,and the second number is: " << b << endl;
 	cout << "after swap the first number become: " << swapped_a << ", and the second number is: " << swapped_b << endl;
