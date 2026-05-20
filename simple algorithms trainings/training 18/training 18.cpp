@@ -3,17 +3,22 @@
 
 using namespace std;
 
+const float PI = 3.14;
+
+float area_calc(float r)
+{
+	return PI * pow(r, 2);
+}
+
 int main()
 {
 	float r, area;
-	const float PI = 3.14;
-
+	
 	cout << "Please enter the radius value?" << endl;
 	cin >> r;
 
-	area = PI * pow(r, 2);
 
-	cout << "The area of the selected circle rounded up is: " << ceil(area) << endl;
+	cout << "The area of the selected circle rounded up is: " << ceil(area_calc(r)) << endl;
 
 
 	return 0;
