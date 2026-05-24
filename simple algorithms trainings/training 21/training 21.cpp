@@ -3,15 +3,21 @@
 
 using namespace std;
 
+const float PI = 3.14;
+
+float area_calc(float l)
+{
+	return (pow(l, 2) / (4 * PI));
+}
+
 int main()
 {
 	float l, area;
-	const float PI = 3.14;
-
+	
 	cout << "Please enter the circumference value." << endl;
 	cin >> l;
 
-	area = (pow(l, 2) / (4 * PI));
+	area = area_calc(l);
 
 	cout << "The area of the circle is: " << ceil(area) << endl;
 
