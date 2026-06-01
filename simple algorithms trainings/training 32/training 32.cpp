@@ -3,6 +3,11 @@
 
 using namespace std;
 
+short pow_calc(short num, short m)
+{
+	return pow(num, m);
+}
+
 int main()
 {
 
@@ -14,7 +19,7 @@ int main()
 	cout << "Please enter the power value?" << endl;
 	cin >> m;
 
-	result = pow(num, m);
+	result = pow_calc(num, m);
 
 	cout << "The result for " << num << " to the power " << m << " is: " << floor(result) << endl;
 
