@@ -3,6 +3,11 @@
 
 using namespace std;
 
+void sec_value(int days, int hours, int min, int sec)
+{
+	cout << "This value of second in form of days:hours:minutes:seconds is: " << round(days) << ":" << round(hours) << ":" << round(min) << ":" << round(sec) << endl;
+}
+
 int main()
 {
 	int total_sec, days, hours, min, sec, remainder_sec;
@@ -21,7 +26,7 @@ int main()
 
 	sec = remainder_sec;
 
-	cout << "This value of second in form of days:hours:minutes:seconds is: " << round(days) << ":" << round(hours) << ":" << round(min) << ":" << round(sec) << endl;
+	sec_value(days, hours, min, sec);
 	
 
 	return 0;
