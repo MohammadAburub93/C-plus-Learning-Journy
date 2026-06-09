@@ -15,6 +15,8 @@ void fun_1()
 int main()
 {
 	int mult;
+
+	// to change the value of a global variable :: should be used
 	mult = ::x * ::y;
 
 	fun_1();
