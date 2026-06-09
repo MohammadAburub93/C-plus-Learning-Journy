@@ -20,6 +20,8 @@ int main()
 
 	my_function_1();
 
+	::x = 7000;
+
 	cout << "The global value of x is: " << ::x << endl;
 
 	return 0;
