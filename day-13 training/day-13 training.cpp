@@ -3,6 +3,8 @@
 
 using namespace std;
 
+int x = 300;
+
 void my_function_1()
 {
 	int x = 500;
@@ -17,6 +19,8 @@ int main()
 	cout << "The local value of x inside main is: " << x << endl;
 
 	my_function_1();
+
+	cout << "The global value of x is: " << ::x << endl;
 
 	return 0;
 }
