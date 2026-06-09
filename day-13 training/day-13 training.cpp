@@ -15,9 +15,10 @@ void fun_1()
 int main()
 {
 	int mult;
+	short x = 10;
 
 	// to change the value of a global variable :: should be used
-	mult = ::x * ::y;
+	mult = ::x * x;
 
 	fun_1();
 
