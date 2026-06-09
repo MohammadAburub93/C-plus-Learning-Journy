@@ -3,26 +3,23 @@
 
 using namespace std;
 
-int x = 300;
+short x = 20, y = 30;
 
-void my_function_1()
+void fun_1()
 {
-	int x = 500;
+	short m = 200;
 
-	cout << "The value of x inside function is: " << x << endl;
+	cout << "local valur of m in function is: " << m << endl;
 }
 
 int main()
 {
-	int x = 10;
+	int mult;
+	mult = ::x * ::y;
 
-	cout << "The local value of x inside main is: " << x << endl;
+	fun_1();
 
-	my_function_1();
-
-	::x = 7000;
-
-	cout << "The global value of x is: " << ::x << endl;
+	cout << "The multiplication value of the global variabels is: " << mult << endl;
 
 	return 0;
 }
