@@ -14,50 +14,54 @@ struct p_info
 	float monthly_salary;
 	gender my_gender;
 	m_status marital_s;
-	fav_color my_color; 
+	fav_color my_color;
 };
 
-void info_card()
+void read_info(p_info &info)
 {
-	p_info person_1;
 
 	cout << "Please enter your name?" << endl;
-	cin >> person_1.name;
+	cin >> info.name;
 
 	cout << "Please enter your age in numbers?" << endl;
-	cin >> person_1.age;
+	cin >> info.age;
 
 	cout << "Please enter your city name?" << endl;
-	cin >> person_1.city;
+	cin >> info.city;
 
 	cout << "Please enter your country?" << endl;
-	cin >> person_1.country;
+	cin >> info.country;
 
 	cout << "Please enter your monthly salary?" << endl;
-	cin >> person_1.monthly_salary;
+	cin >> info.monthly_salary;
 
-	person_1.my_gender = gender::male;
-	person_1.marital_s = m_status::single;
-	person_1.my_color = fav_color::blue;
+	info.my_gender = gender::male;
+	info.marital_s = m_status::single;
+	info.my_color = fav_color::blue;
 
+	
+}
+
+void print_info(p_info info)
+{
 	cout << "******************************\n\n";
-	cout << "Name: " << person_1.name << "." << endl;
-	cout << "Age: " << person_1.age << " Years." << endl;
-	cout << "City: " << person_1.city << "." << endl;
-	cout << "Country: " << person_1.country << "." << endl;
-	cout << "Monthly Salary: " << person_1.monthly_salary << endl;
-	cout << "Yearly Salary: " << person_1.monthly_salary * 12 << endl;
-	cout << "Gender: " << person_1.my_gender << endl;
-	cout << "Married: " << person_1.marital_s << endl;
-	cout << "Favorate color: " << person_1.my_color << endl << endl;
+	cout << "Name: " << info.name << "." << endl;
+	cout << "Age: " << info.age << " Years." << endl;
+	cout << "City: " << info.city << "." << endl;
+	cout << "Country: " << info.country << "." << endl;
+	cout << "Monthly Salary: " << info.monthly_salary << endl;
+	cout << "Yearly Salary: " << info.monthly_salary * 12 << endl;
+	cout << "Gender: " << info.my_gender << endl;
+	cout << "Married: " << info.marital_s << endl;
+	cout << "Favorate color: " << info.my_color << endl << endl;
 	cout << "******************************\n\n";
 }
 
-
-
 int main()
 {
-	info_card();
+	p_info person_1_info;
+	read_info(person_1_info);
+	print_info(person_1_info);
 
 	return 0;
 
