@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-	float grades[3], average;
-
+	int grades[3];
+	float average;
 
 	cout << "Please enter the first grade?\n";
 	cin >> grades[0];
