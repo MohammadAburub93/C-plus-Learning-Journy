@@ -2,36 +2,35 @@
 
 using namespace std;
 
-void read_array_data(int x[3])
+void read_grades(float grades[3])
 {
-	cout << "Please enter number1?\n";
-	cin >> x[0];
+	cout << "Please enter the first grade?\n";
+	cin >> grades[0];
 
-	cout << "Please enter number2?\n";
-	cin >> x[1];
+	cout << "Please enter the second grade?\n";
+	cin >> grades[1];
 
-	cout << "Please enter number3?\n";
-	cin >> x[2];
-
+	cout << "Please enter the third grade?\n";
+	cin >> grades[2];
 }
 
-void print_array_data(int x[3])
+void print_average(float grades[3])
 {
-	cout << "\n***********************************\n";
+	float avg;
 
-	cout << x[0] << endl;
-	cout << x[1] << endl;
-	cout << x[2] << endl;
+	avg = (grades[0] + grades[1] + grades[2]) / 3;
 
+	cout << "\n**************************\n";
+
+	cout << "The average of your grades is: " << avg << endl;
 }
-
 
 int main()
 {
-	int x[3];
+	float grades[3];
 
-	read_array_data(x);
-	print_array_data(x);
+	read_grades(grades);
+	print_average(grades);
 
 	return 0;
 }
