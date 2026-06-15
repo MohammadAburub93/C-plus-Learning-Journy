@@ -2,36 +2,60 @@
 
 using namespace std;
 
-void read_grades(float grades[3])
+struct info
 {
-	cout << "Please enter the first grade?\n";
-	cin >> grades[0];
+	string firstname;
+	string lastname;
+	int age;
+	string phone;
+};
 
-	cout << "Please enter the second grade?\n";
-	cin >> grades[1];
+void read_info(info &p_info)
+{
+	cout << "Please enter person first name?\n";
+	cin >> p_info.firstname;
 
-	cout << "Please enter the third grade?\n";
-	cin >> grades[2];
+	cout << "Please enter person last name?\n";
+	cin >> p_info.lastname;
+
+	cout << "Please enter person age?\n";
+	cin >> p_info.age;
+
+	cout << "Please enter person phone?\n";
+	cin >> p_info.phone;
+
 }
 
-float calc_average(float grades[3])
+void print_info(info p_info)
 {
-	float avg;
+	cout << "\n****************************\n";
+	cout << "First Name: " << p_info.firstname << endl;
+	cout << "Last Name: " << p_info.lastname << endl;
+	cout << "Age: " << p_info.age << " Years." << endl;
+	cout << "Phone: " << p_info.phone << endl;
+	cout << "****************************\n";
 
-	avg = (grades[0] + grades[1] + grades[2]) / 3;
-
-	return avg;
 }
+
+void read_persons_info(info p_info[2])
+{
+	read_info(p_info[0]);
+	read_info(p_info[1]);
+}
+
+void print_persons_info(info p_info[2])
+{
+	print_info(p_info[0]);
+	print_info(p_info[1]);
+}
+
 
 int main()
 {
-	float grades[3];
-
-	read_grades(grades);
-
-	cout << "\n**************************\n";
-
-	cout << "The average of your grades is: " << calc_average(grades) << endl;
+	info p_info[2];
+	
+	read_persons_info(p_info);
+	print_persons_info(p_info);
 
 	return 0;
 }
