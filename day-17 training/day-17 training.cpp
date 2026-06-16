@@ -4,11 +4,19 @@ using namespace std;
 
 int main()
 {
-	int x = 10;
+	int x;
+
+	cout << "Please enter your number?\n";
+	cin >> x;
 
 	if (x > 5)
 	{
-		cout << "The code of 'if' body has executed." << endl;
+		cout << "yes, x is greater than 5." << endl;
+	}
+
+	else
+	{
+		cout << "No, x is less than 5.";
 	}
 
 	cout << "The code after 'if' body always executed." << endl;
