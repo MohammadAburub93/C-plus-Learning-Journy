@@ -16,7 +16,7 @@ int main()
 
 	else
 	{
-		cout << "No, x is less than 5.";
+		cout << "No, x is less than 5." << endl;;
 	}
 
 	cout << "The code after 'if' body always executed." << endl;
