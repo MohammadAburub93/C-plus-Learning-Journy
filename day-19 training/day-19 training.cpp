@@ -2,44 +2,55 @@
 
 using namespace std;
 
-enum enScreenColor { red = 1, blue = 2, green = 3, yellow = 4 };
+enum enCountryChoice {Jordan=1, Tunisa=2, Algeria=3, Oman=4, Egypt=5, Iraq=6, Other=7};
 
 int main()
 {
 	cout << "*****************************\n";
-	cout << "Please Chose the number of your color?\n";
-	cout << "(1) Red\n";
-	cout << "(2) Blue\n";
-	cout << "(3) Green\n";
-	cout << "(4) Yellow\n";
+	cout << "Please Chose the number of your country?\n";
+	cout << "(1) Jordan\n";
+	cout << "(2) Tunisa\n";
+	cout << "(3) Algeria\n";
+	cout << "(4) Oman\n";
+	cout << "(5) Egypt\n";
+	cout << "(6) Iraq\n";
+	cout << "(7) Other\n";
 	cout << "*****************************\n\n";
 	cout << "Your chouce? ";
 
 	int c;
-	enScreenColor color;
+	enCountryChoice country;
 
 	cin >> c;
-	color = (enScreenColor)c;
+	country = (enCountryChoice)c;
 
-	if (color == enScreenColor::red)
+	if (country == enCountryChoice::Jordan)
 	{
-		system("color 4F");
+		cout << "Your country is: Jordan\n";
 	}
-	else if (color == enScreenColor::blue)
+	else if (country == enCountryChoice::Tunisa)
 	{
-		system("color 1F");
+		cout << "Your country is: Tunisa\n";
 	}
-	else if (color == enScreenColor::green)
+	else if (country == enCountryChoice::Algeria)
 	{
-		system("color 2F");
+		cout << "Your country is: Algeria\n";
 	}
-	else if (color == enScreenColor::yellow)
+	else if (country == enCountryChoice::Oman)
 	{
-		system("color 6F");
+		cout << "Your country is: Oman\n";
+	}
+	else if (country == enCountryChoice::Egypt)
+	{
+		cout << "Your country is: Egypt\n";
+	}
+	else if (country == enCountryChoice::Iraq)
+	{
+		cout << "Your country is: Iraq\n";
 	}
 	else
 	{
-		system("color 6F");
+		cout << "Your country is: Other\n";
 	}
 
 	return 0;
