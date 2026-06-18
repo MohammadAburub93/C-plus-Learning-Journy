@@ -24,33 +24,29 @@ int main()
 	cin >> c;
 	country = (enCountryChoice)c;
 
-	if (country == enCountryChoice::Jordan)
-	{
-		cout << "Your country is: Jordan\n";
-	}
-	else if (country == enCountryChoice::Tunisa)
-	{
-		cout << "Your country is: Tunisa\n";
-	}
-	else if (country == enCountryChoice::Algeria)
-	{
-		cout << "Your country is: Algeria\n";
-	}
-	else if (country == enCountryChoice::Oman)
-	{
-		cout << "Your country is: Oman\n";
-	}
-	else if (country == enCountryChoice::Egypt)
-	{
-		cout << "Your country is: Egypt\n";
-	}
-	else if (country == enCountryChoice::Iraq)
-	{
-		cout << "Your country is: Iraq\n";
-	}
-	else
-	{
-		cout << "Your country is: Other\n";
+	switch (country) {
+
+	case enCountryChoice::Jordan:
+		cout << "Your country is: Jordan";
+		break;
+	case enCountryChoice::Tunisa:
+		cout << "Your country is: Tunisa";
+		break;
+	case enCountryChoice::Algeria:
+		cout << "Your country is: Algeria";
+		break;
+	case enCountryChoice::Oman:
+		cout << "Your country is: Oman";
+		break;
+	case enCountryChoice::Egypt:
+		cout << "Your country is: Egypt";
+		break;
+	case enCountryChoice::Iraq:
+		cout << "Your country is: Iraq";
+		break;
+	default:
+		cout << "Your country is: Other";
+		break;
 	}
 
 	return 0;
