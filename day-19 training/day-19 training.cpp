@@ -2,52 +2,74 @@
 
 using namespace std;
 
-enum enCountryChoice {Jordan=1, Tunisa=2, Algeria=3, Oman=4, Egypt=5, Iraq=6, Other=7};
+enum enWeekDays {Sun=1, Mon=2, Tue=3, Wed=4, Thu=5, Fri=6, Sat=7};
+
+void show_days_menu()
+{
+	cout << "****************************" << endl;
+	cout << "           Week Days        " << endl;
+	cout << "****************************" << endl;
+	cout << "1: Sunday" << endl;
+	cout << "2: Monday" << endl;
+	cout << "3: Tuesday" << endl;
+	cout << "4: Wednesday" << endl;
+	cout << "5: Thursday" << endl;
+	cout << "6: Friday" << endl;
+	cout << "7: Saturday" << endl;
+	cout << "****************************" << endl;
+	cout << "Please enter the number of the day?" << endl;
+}
+
+enWeekDays read_week_day()
+{
+	enWeekDays week_day;
+	
+
+	int wd;
+
+	cin >> wd;
+	return (enWeekDays)wd;
+}
+
+string get_week_day(enWeekDays week_day)
+{
+	switch (week_day) {
+
+	case enWeekDays::Sun:
+		return "Sunday";
+		break;
+	case enWeekDays::Mon:
+		return "Monday";
+		break;
+	case enWeekDays::Tue:
+		return "Tuesday";
+		break;
+	case enWeekDays::Wed:
+		return "Wednesday";
+		break;
+	case enWeekDays::Thu:
+		return "Thursday";
+		break;
+	case enWeekDays::Fri:
+		return "Friday";
+		break;
+	case enWeekDays::Sat:
+		return "Saturday";
+		break;
+	default:
+		return "Not a week day";
+	}
+}
 
 int main()
 {
-	cout << "*****************************\n";
-	cout << "Please Chose the number of your country?\n";
-	cout << "(1) Jordan\n";
-	cout << "(2) Tunisa\n";
-	cout << "(3) Algeria\n";
-	cout << "(4) Oman\n";
-	cout << "(5) Egypt\n";
-	cout << "(6) Iraq\n";
-	cout << "(7) Other\n";
-	cout << "*****************************\n\n";
-	cout << "Your chouce? ";
+	string day_name;
 
-	int c;
-	enCountryChoice country;
 
-	cin >> c;
-	country = (enCountryChoice)c;
+	show_days_menu();
+	day_name = get_week_day(read_week_day());
 
-	switch (country) {
-
-	case enCountryChoice::Jordan:
-		cout << "Your country is: Jordan";
-		break;
-	case enCountryChoice::Tunisa:
-		cout << "Your country is: Tunisa";
-		break;
-	case enCountryChoice::Algeria:
-		cout << "Your country is: Algeria";
-		break;
-	case enCountryChoice::Oman:
-		cout << "Your country is: Oman";
-		break;
-	case enCountryChoice::Egypt:
-		cout << "Your country is: Egypt";
-		break;
-	case enCountryChoice::Iraq:
-		cout << "Your country is: Iraq";
-		break;
-	default:
-		cout << "Your country is: Other";
-		break;
-	}
+	cout << "The day is: " << day_name << endl;
 
 	return 0;
 }
