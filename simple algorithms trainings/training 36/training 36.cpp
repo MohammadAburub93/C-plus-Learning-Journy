@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void read_info(float &num1, float &num2, string &opr)
+void read_info(float &num1, float &num2, char &opr)
 {
 	cout << "Please enter the first number?" << endl;
 	cin >> num1;
@@ -14,25 +14,26 @@ void read_info(float &num1, float &num2, string &opr)
 	cin >> opr;
 }
 
-float calc_result(float num1, float num2, string opr)
+float calc_result(float num1, float num2, char opr)
 {
 	float result;
 
-	if (opr == "+")
-	{
+	switch (opr) {
+
+	case '+':
 		result = num1 + num2;
-	}
-	else if (opr == "-")
-	{
+		break;
+	case '-':
 		result = num1 - num2;
-	}
-	else if (opr == "*")
-	{
+		break;
+	case '*':
 		result = num1 * num2;
-	}
-	else if (opr == "/")
-	{
+		break;
+	case '/':
 		result = num1 / num2;
+		break;
+	default:
+		cout << "Not valid operand";
 	}
 
 	return result;
@@ -41,7 +42,7 @@ float calc_result(float num1, float num2, string opr)
 int main()
 {
 	float num1, num2;
-	string opr;
+	char opr;
 
 	read_info(num1, num2, opr);
 	
