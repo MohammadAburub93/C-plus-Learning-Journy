@@ -10,38 +10,34 @@ void read_day(short &day)
 
 void print_day_name(short day)
 {
-	if (day == 1)
-	{
+	
+	switch (day) {
+
+	case 1:
 		cout << "It's Sunday" << endl;
-	}
-	else if (day == 2)
-	{
+		break;
+	case 2:
 		cout << "It's Monday" << endl;
-	}
-	else if (day == 3)
-	{
+		break;
+	case 3:
 		cout << "It's Tuesday" << endl;
-	}
-	else if (day == 4)
-	{
+		break;
+	case 4:
 		cout << "It's Wednesday" << endl;
-	}
-	else if (day == 5)
-	{
+		break;
+	case 5:
 		cout << "It's Thursday" << endl;
-	}
-	else if (day == 6)
-	{
+		break;
+	case 6:
 		cout << "It's Friday" << endl;
-	}
-	else if (day == 7)
-	{
+		break;
+	case 7:
 		cout << "It's Saturday" << endl;
+		break;
+	default:
+		cout << "Not a valid day number\n";
 	}
-	else
-	{
-		cout << "Wrong day" << endl;
-	}
+	
 }
 
 int main()
