@@ -10,57 +10,46 @@ void read_month(short& month)
 
 void print_month_name(short month)
 {
-	if (month == 1)
-	{
+	switch (month) {
+
+	case 1:
 		cout << "It's January" << endl;
-	}
-	else if (month == 2)
-	{
+		break;
+	case 2:
 		cout << "It's February" << endl;
-	}
-	else if (month == 3)
-	{
+		break;
+	case 3:
 		cout << "It's March" << endl;
-	}
-	else if (month == 4)
-	{
+		break;
+	case 4:
 		cout << "It's April" << endl;
-	}
-	else if (month == 5)
-	{
+		break;
+	case 5:
 		cout << "It's May" << endl;
-	}
-	else if (month == 6)
-	{
+		break;
+	case 6:
 		cout << "It's June" << endl;
-	}
-	else if (month == 7)
-	{
+		break;
+	case 7:
 		cout << "It's July" << endl;
-	}
-	else if (month == 8)
-	{
+		break;
+	case 8:
 		cout << "It's August" << endl;
-	}
-	else if (month == 9)
-	{
+		break;
+	case 9:
 		cout << "It's September" << endl;
-	}
-	else if (month == 10)
-	{
+		break;
+	case 10:
 		cout << "It's October" << endl;
-	}
-	else if (month == 11)
-	{
+		break;
+	case 11:
 		cout << "It's November" << endl;
-	}
-	else if (month == 12)
-	{
+		break;
+	case 12:
 		cout << "It's December" << endl;
-	}
-	else
-	{
-		cout << "Wrong Month" << endl;
+		break;
+	default:
+		cout << "Not a valid month number" << endl;
 	}
 }
 
