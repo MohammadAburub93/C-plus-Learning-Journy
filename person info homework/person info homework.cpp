@@ -37,25 +37,37 @@ void print_info(info p_info)
 
 }
 
-void read_persons_info(info p_info[2])
+void read_persons_info(info p_info[100], int &length)
 {
-	read_info(p_info[0]);
-	read_info(p_info[1]);
+	cout << "Please enter the number of people you want to make the card for?" << endl;
+	cin >> length;
+
+	for (int i = 0; i < length; i++)
+	{
+		cout << "\nPlease enter Person's  " << i + 1 << " Info:\n\n";
+		read_info(p_info[i]);
+	}
+	
 }
 
-void print_persons_info(info p_info[2])
+void print_persons_info(info p_info[100], int length)
 {
-	print_info(p_info[0]);
-	print_info(p_info[1]);
+	for (int i = 0; i < length; i++)
+	{
+		cout << "\n\nPerson's " << i + 1 << " Info:\n";
+		print_info(p_info[i]);
+	}
+	
 }
 
 
 int main()
 {
-	info p_info[2];
+	info p_info[100];
+	int length;
 
-	read_persons_info(p_info);
-	print_persons_info(p_info);
+	read_persons_info(p_info, length);
+	print_persons_info(p_info, length);
 
 	return 0;
 }
