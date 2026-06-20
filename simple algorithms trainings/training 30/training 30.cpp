@@ -2,10 +2,21 @@
 
 using namespace std;
 
+void validate_number(short& num)
+{
+	while (num <= 0)
+	{
+		cout << "It's a wrong number, Please enter a positive number?" << endl;
+		cin >> num;
+	}
+}
+
 void read_number(short &num)
 {
 	cout << "Please enter the number?" << endl;
 	cin >> num;
+
+	validate_number(num);
 }
 
 int calc_factorial(short num)
@@ -19,6 +30,7 @@ int calc_factorial(short num)
 
 	return result;
 }
+
 
 int main()
 {
