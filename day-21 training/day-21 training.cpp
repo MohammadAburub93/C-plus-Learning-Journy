@@ -4,12 +4,14 @@ using namespace std;
 
 int main()
 {
-	for (int i = 65; i <= 90; i++)
+	for (int i = 10; i >= 1; i--)
 	{
-		for (int j = 65; j <= 90; j++)
+		for (int j = 1; j <= i; j++)
 		{
-			cout << char(i) << char(j) << endl;
+			cout << "*";
 		}
+
+		cout << "\n";
 	}
 
 	return 0;
