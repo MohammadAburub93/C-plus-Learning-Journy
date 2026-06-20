@@ -2,23 +2,21 @@
 
 using namespace std;
 
-int read_number_in_range(int from, int to)
-{
-	int num;
-
-	do
-	{
-		cout << "Please enter a number between " << from << " to " << to << " ?" << endl;
-		cin >> num;
-	} while (num < from || num > to);
-
-	return num;
-}
-
 int main()
 {
-	
-	cout << "\nThe number is: " << read_number_in_range(0, 100) << endl;
+	int arr[10] = { 10, 20, 44, 55, 33, 22, 99, 88, 99, 100 };
+	int search_value = 44;
+
+	for (int i = 0; i < 10; i++)
+	{
+		cout << "We are now at position " << i << endl;
+		if (arr[i] == search_value)
+		{
+			cout << "The value of " << search_value << " is found at position " << i << endl;
+			break;
+		}
+
+	}
 
 	return 0;
 }
