@@ -1,11 +1,16 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-void read_name(string& name)
+string read_name()
 {
+	string name;
+
 	cout << "Please enter your name?" << endl;
-	cin >> name;
+	getline(cin, name);
+
+	return name;
 }
 
 void name_fun(string name)
@@ -16,10 +21,7 @@ void name_fun(string name)
 
 int main()
 {
-	string name;
-
-	read_name(name);
-	name_fun(name);
+	name_fun(read_name());
 
 	return 0;
 }
