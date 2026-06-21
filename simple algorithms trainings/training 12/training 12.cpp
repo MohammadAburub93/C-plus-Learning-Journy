@@ -11,7 +11,7 @@ void read_numbers(int &num1, int &num2)
 	cin >> num2;
 }
 
-int check_max_num(int num1, int num2)
+int max_num(int num1, int num2)
 {
 	if (num1 > num2)
 		return num1;
@@ -21,7 +21,7 @@ int check_max_num(int num1, int num2)
 
 void print_max_num(int num1, int num2)
 {
-	cout << "The max number is: " << check_max_num(num1, num2) << endl;
+	cout << "The max number is: " << max_num(num1, num2) << endl;
 }
 
 int main()
