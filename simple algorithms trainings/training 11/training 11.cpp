@@ -2,7 +2,9 @@
 
 using namespace std;
 
-void read_marks(float marks[3])
+enum enPassFail {pass = 1, fail = 2};
+
+void read_marks(int marks[3])
 {
 	cout << "Please enter the first mark?" << endl;
 	cin >> marks[0];
@@ -14,36 +16,42 @@ void read_marks(float marks[3])
 	cin >> marks[2];
 }
 
-float calc_avg(float marks[3])
+int marks_sum(int marks[3])
 {
-	float avg;
-
-	avg = (marks[0] + marks[1] + marks[2]) / 3;
-
-	return avg;
+	return marks[0] + marks[1] + marks[2];
+	
 }
 
-void check_result(float avg)
+float calc_avg(int marks[3])
 {
-	cout << avg << endl;
+	return (float)marks_sum(marks)/ 3;
 
-	if (avg >= 50)
-	{
-		cout << "Pass!" << endl;
-	}
+}
+
+enPassFail check_average(float average)
+{
+	if (average >= 50)
+		return enPassFail::pass;
 	else
-	{
-		cout << "Fail!" << endl;
-	}
+		return enPassFail::fail;
+}
+
+void print_result(float average)
+{
+	cout << "\nYour average is: " << average << endl;
+
+	if (check_average(average) == enPassFail::pass)
+		cout << "You Passed!" << endl;
+	else
+		cout << "You failed!" << endl;
 }
 
 int main()
 {
-	float marks[3], avg;
+	int marks[3];
 
 	read_marks(marks);
-	avg = calc_avg(marks);
-	check_result(avg);
+	print_result(calc_avg(marks));
 
 	return 0;
 }
