@@ -2,39 +2,43 @@
 
 using namespace std;
 
-void read_numbers(int& num1, int& num2, int &num3)
+void read_numbers(int& nums_count, int numbers[100])
 {
-	cout << "Please enter the first number?\n";
-	cin >> num1;
-
-	cout << "Please enter the second number?\n";
-	cin >> num2;
-
-	cout << "Please enter the second number?\n";
-	cin >> num3;
+	cout << "Please enter the count of numbers?\n";
+	cin >> nums_count;
+	
+	for (int i = 1; i <= nums_count; i++)
+	{
+		cout << "Please enter the number value in position " << i << endl;;
+		cin >> numbers[i - 1];
+	}
 }
 
-int max_num(int num1, int num2, int num3)
+int max_num(int numbers[100], int nums_count)
 {
-	if (num1 > num2 && num1 > num3)
-		return num1;
-	else if (num2 > num1 && num2 > num3)
-		return num2;
-	else
-		return num3;
+	int max = 0;
+	for (int i = 0; i <= nums_count - 1; i++)
+	{
+		if (numbers[i] > max)
+			max = numbers[i];
+		else
+			continue;
+	}
+	
+		return max;
 }
 
-void print_max_num(int num1, int num2, int num3)
+void print_max_num(int numbers[100], int nums_count)
 {
-	cout << "The max number is: " << max_num(num1, num2, num3) << endl;
+	cout << "The max number is: " << max_num(numbers, nums_count) << endl;
 }
 
 int main()
 {
-	int num1, num2, num3;
+	int numbers[100], nums_count;
 
-	read_numbers(num1, num2, num3);
-	print_max_num(num1, num2, num3);
+	read_numbers(nums_count, numbers);
+	print_max_num(numbers, nums_count);
 
 	return 0;
 }
