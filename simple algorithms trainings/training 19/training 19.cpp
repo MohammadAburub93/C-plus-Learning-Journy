@@ -3,24 +3,36 @@
 
 using namespace std;
 
-const float PI = 3.14;
+
+float read_circle_diameter()
+{
+	float d;
+
+	cout << "Please enter the diameter value?" << endl;
+	cin >> d;
+
+	return d;
+}
 
 float area_calc(float d)
 {
-	return ((PI * pow(d, 2)) / 4);
+	float area;
+
+	const float PI = 3.14;
+
+	area = PI * pow(d, 2) / 4;
+
+	return area;
+}
+
+void print_circle_area(float area)
+{
+	cout << "The area of the selected circle is: " << area << endl;
 }
 
 int main()
 {
-	float d, area;
-	
-	cout << "Please enter the circle diameter." << endl;
-	cin >> d;
-
-	area = area_calc(d);
-
-	cout << "The area of the circle is: " << ceil(area) << endl;
+	print_circle_area(area_calc(read_circle_diameter()));
 
 	return 0;
-	
 }
