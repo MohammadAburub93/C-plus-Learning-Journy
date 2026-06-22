@@ -2,26 +2,33 @@
 
 using namespace std;
 
-void read_age(int &age)
+
+int read_user_age()
 {
+	int age;
 	cout << "Please enter your age?\n";
 	cin >> age;
+
+	return age;
+}
+
+bool validate_number_in_range(int number, int from, int to)
+{
+	return (number >= from && number <= to);
+}
+
+void print_age_validity(int age)
+{
+	if (validate_number_in_range(age, 18, 45))
+		cout << "Valid Age!" << endl;
+	else
+		cout << "Invalid Age!" << endl;
 }
 
 int main()
 {
-	int age;
 	
-	read_age(age);
-
-	if (age >= 18 && age <= 45)
-	{
-		cout << "Valid Age!" << endl;
-	}
-	else
-	{
-		cout << "Invalid Age!" << endl;
-	}
+	print_age_validity(read_user_age());
 
 	return 0;
 }
