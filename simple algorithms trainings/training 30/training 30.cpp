@@ -2,24 +2,21 @@
 
 using namespace std;
 
-void validate_number(short& num)
+int read_positive_number(string message)
 {
-	while (num <= 0)
+	int num;
+
+	do
 	{
-		cout << "It's a wrong number, Please enter a positive number?" << endl;
+		cout << message << endl;
 		cin >> num;
-	}
+	} while (num < 0);
+	
+
+	return num;
 }
 
-void read_number(short &num)
-{
-	cout << "Please enter the number?" << endl;
-	cin >> num;
-
-	validate_number(num);
-}
-
-int calc_factorial(short num)
+int factorial(short num)
 {
 	int result = 1;
 
@@ -31,18 +28,16 @@ int calc_factorial(short num)
 	return result;
 }
 
+void print_factorial_value(int f_result)
+{
+	cout << "*****************************\n";
+	cout << "The factorial of is: " << f_result << endl;
+}
+
 
 int main()
 {
-	short num;
-	int f_result;
-
-	read_number(num);
-	f_result = calc_factorial(num);
-
-	cout << "*****************************\n";
-	cout << "The factorial of " << num << " is: " << f_result << endl;
-
+	print_factorial_value(factorial(read_positive_number("Please enter a positive number")));
 
 	return 0;
 }
