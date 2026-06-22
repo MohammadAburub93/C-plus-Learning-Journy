@@ -22,21 +22,8 @@ void print_numbers(int num)
 	}
 }
 
-void using_while(int num)
-{
-	int count = 1;
-
-	do
-	{
-		cout << count << endl;
-		count++;
-	} while (count <= num);
-}
-
 int main()
 {
 	print_numbers(read_target_number());
-	using_while(read_target_number());
-
 	return 0;
 }

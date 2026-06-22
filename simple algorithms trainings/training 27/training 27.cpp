@@ -2,13 +2,16 @@
 
 using namespace std;
 
-void read_value(short& num)
+int read_starting_number()
 {
+	int num;
 	cout << "Please put your number?\n";
 	cin >> num;
+
+	return num;
 }
 
-void print_numbers(short num)
+void print_numbers(int num)
 {
 	cout << "\n****************************\n";
 
@@ -20,10 +23,7 @@ void print_numbers(short num)
 
 int main()
 {
-	short num;
-
-	read_value(num);
-	print_numbers(num);
+	print_numbers(read_starting_number());
 
 	return 0;
 }
