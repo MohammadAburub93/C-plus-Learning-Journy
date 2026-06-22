@@ -2,34 +2,48 @@
 
 using namespace std;
 
-void read_value(short& num)
+enum enOddorEven { odd = 1, even = 2 };
+
+int read_target_num()
 {
+	int num;
 	cout << "Please enter your number?\n";
 	cin >> num;
+
+	return num;
 }
 
-int odd_num_sum(short num)
+enOddorEven check_odd_or_even(int num)
+{
+	if (num % 2 != 0)
+		return enOddorEven::odd;
+	else
+		return enOddorEven::even;
+}
+
+int even_num_sum(short num)
 {
 	int result = 0;
-	for (short i = 0; i <= num; i = i + 2)
+	for (short counter = 1; counter <= num; counter++)
 	{
-		result = result + i;
+		if (check_odd_or_even(counter) == enOddorEven::even)
+			result += counter;
+		else
+			continue;
 	}
 
 	return result;
 }
 
-int main()
+void print_even_sum(int sum)
 {
-	int sum;
-	short num;
-
-	read_value(num);
-	sum = odd_num_sum(num);
-
 	cout << "********************************" << endl;
 	cout << sum << endl;
+}
 
+int main()
+{
+	print_even_sum(even_num_sum(read_target_num()));
 
 	return 0;
 }
