@@ -1,20 +1,35 @@
 #include <iostream>
 using namespace std;
 
+float ReadPositiveNumber(string message)
+{
+	float number;
+
+	do
+	{
+		cout << message << endl;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+
+float CalculateRemainder(float Bill, float Cash)
+{
+	return Cash - Bill;
+}
+
 int main()
 {
+	float Bill = ReadPositiveNumber("Please enter a positve value of the bill.");
+	float Cash = ReadPositiveNumber("Please enter a positve value of cash.");
 
-	float t_bill, cash, t_change;
+	cout << "The Total bill is: " << Bill << endl;
+	cout << "The Total cash paid is: " << Cash << endl;
 
-	cout << "Please enter the value of your total bill." << endl;
-	cin >> t_bill;
-
-	cout << "Please enter the value of cash paid." << endl;
-	cin >> cash;
-
-	t_change = cash - t_bill;
-
-	cout << "You will get a change equal to: " << t_change << endl;
+	cout << "\n***************************\n\n";
+	cout << "The Remainder is: " << CalculateRemainder(Bill, Cash) << endl;
+	
 
 	return 0;
 }
