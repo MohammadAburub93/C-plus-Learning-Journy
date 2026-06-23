@@ -32,10 +32,15 @@ enPrimeNotPrime CheckPrimeNumber(int number)
 
 void PrintNumberType(int number)
 {
-	if (CheckPrimeNumber(number) == enPrimeNotPrime::Prime)
+	switch (CheckPrimeNumber(number))
+	{
+	case enPrimeNotPrime::Prime:
 		cout << "\nYour number is a Prime number!" << endl;
-	else
-		cout << "\nYour number is not a Prime number!" << endl;  
+		break;
+	case enPrimeNotPrime::NotPrime:
+		cout << "\nYour number is not a Prime number!" << endl;
+		break;
+	}  
 }
 
 int main()
