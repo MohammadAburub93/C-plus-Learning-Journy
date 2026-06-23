@@ -1,30 +1,33 @@
 #include <iostream>
-#include<cmath>
+#include <cmath>
 
 using namespace std;
 
-short pow_calc(short num, short m)
+void read_number_and_power(int &num, int &power)
 {
-	return pow(num, m);
+
+	cout << "Please enter your number N." << endl;
+	cin >> num;
+
+	cout << "Please enter the power value m." << endl;
+	cin >> power;
+}
+
+void power_m_of_number(int num, int m)
+{
+	int p;
+
+	p = pow(num, m);
+
+	cout << num << " to the power " << m << " = " << p << endl;
 }
 
 int main()
 {
+	int num, power;
 
-	short int num, m, result;
-
-	cout << "Please enter the number value?" << endl;
-	cin >> num;
-
-	cout << "Please enter the power value?" << endl;
-	cin >> m;
-
-	result = pow_calc(num, m);
-
-	cout << "The result for " << num << " to the power " << m << " is: " << floor(result) << endl;
-
-
-
+	read_number_and_power(num, power);
+	power_m_of_number(num, power);
 
 	return 0;
 }

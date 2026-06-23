@@ -3,32 +3,32 @@
 
 using namespace std;
 
-int pow_2(int num)
+int read_number()
 {
-	return floor(pow(num, 2));
-}
-
-int pow_3(int num)
-{
-	return floor(pow(num, 3));
-}
-
-int pow_4(int num)
-{
-	return floor(pow(num, 4));
-}
-
-int main()
-{
-
-	short int num;
+	int num;
 
 	cout << "Please enter your number N." << endl;
 	cin >> num;
 
-	cout << "The N^2 = " << pow_2(num)<< endl;
-	cout << "The N^3 = " << pow_3(num) << endl;
-	cout << "The N^4 = " << pow_4(num) << endl;
+	return num;
+}
+
+void power_of_2_3_4_of_number(int num)
+{
+	int p2, p3, p4;
+	
+	p2 = pow(num, 2);
+	p3 = pow(num, 3);
+	p4 = pow(num, 4);
+
+	cout << "The " << num << "^2 = " << p2<< endl;
+	cout << "The " << num << "^3 = " << p3 << endl;
+	cout << "The " << num << "^4 = " << p4 << endl;
+}
+
+int main()
+{
+	power_of_2_3_4_of_number(read_number());
 
 	return 0;
 }
