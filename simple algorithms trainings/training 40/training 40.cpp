@@ -1,17 +1,33 @@
 #include <iostream>
 using namespace std;
 
+float ReadPositiveNumber(string message)
+{
+	float number;
+
+	do
+	{
+		cout << message << endl;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+
+float CalculateBillAfterTaxes(float Bill)
+{
+	return Bill + (Bill * 0.1) + (Bill * 0.16);
+}
+
 int main()
 {
+	float Bill = ReadPositiveNumber("Please enter a positve value of the bill.");
 
-	float bill, t_bill;
+	cout << "The bill value before taxes is: " << Bill << endl;
 
-	cout << "Please enter the value of your bill value before taxes." << endl;
-	cin >> bill;
+	cout << "\n***************************\n";
+	cout << "The bill value after taxes is: " << CalculateBillAfterTaxes(Bill) << endl;
 
-	t_bill = bill + (bill * 0.1) + (bill * 0.16);
-
-	cout << "The total bill after taxes is: " << t_bill << endl;
 
 	return 0;
 }
