@@ -2,52 +2,53 @@
 
 using namespace std;
 
-void read_info(float &num1, float &num2, char &opr)
+
+enum enOperators {plus = '+', minus = '-', multiply = '*', devide = '/' };
+
+float ReadNumber(string message)
 {
-	cout << "Please enter the first number?" << endl;
-	cin >> num1;
+	float number = 0;
 
-	cout << "Please enter the second number?" << endl;
-	cin >> num2;
+	cout << message << endl;
+	cin >> number;
 
-	cout << "Please enter the operator? choose between + - * /" << endl;
-	cin >> opr;
+	return number;
 }
 
-float calc_result(float num1, float num2, char opr)
+enOperators ReadOperationType()
 {
-	float result;
+	char OT = '+';
 
-	switch (opr) {
+	cout << "Please enter the operation sign between (+, -, *, /)" << endl;
+	cin >> OT;
 
-	case '+':
-		result = num1 + num2;
-		break;
-	case '-':
-		result = num1 - num2;
-		break;
-	case '*':
-		result = num1 * num2;
-		break;
-	case '/':
-		result = num1 / num2;
-		break;
-	default:
-		cout << "Not valid operand";
+	return (enOperators)OT;
+}
+
+float CalculatorResult(float number1, float number2, enOperators OpType)
+{
+	switch (OpType)
+	{
+	case enOperators::plus:
+		return number1 + number2;
+	case enOperators::minus:
+		return number1 - number2;
+	case enOperators::multiply:
+		return number1 * number2;
+	case enOperators::devide:
+		return number1 / number2;
 	}
-
-	return result;
 }
 
 int main()
 {
-	float num1, num2;
-	char opr;
+	float number1 = ReadNumber("Please enter the first number?");
+	float number2 = ReadNumber("Please enter the second number?");
 
-	read_info(num1, num2, opr);
+	enOperators OpType = ReadOperationType();
+
 	
-	cout << "The result is: " << calc_result(num1, num2, opr) << endl;
-
+	cout << "\nThe result is: " << CalculatorResult(number1, number2, OpType) << endl;
 
 	return 0;
 }
