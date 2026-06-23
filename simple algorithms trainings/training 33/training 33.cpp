@@ -2,47 +2,38 @@
 
 using namespace std;
 
-void read_mark(int &mark)
+int read_number_in_range(int from, int to)
 {
-	cout << "Please enter your mark?" << endl;
-	cin >> mark;
+	int mark;
+
+	do
+	{
+		cout << "Please enter your mark between from " << from << " to " << to << endl;
+		cin >> mark;
+	} while (mark < from || mark > to);
+
+	return mark;
 }
 
-void print_grade(int mark)
+char get_grade_letter(int mark)
 {
-	if (mark <= 100 and mark >= 90)
-	{
-		cout << "Your grade is: A" << endl;
-	}
-	else if (mark < 90 and mark >= 80)
-	{
-		cout << "Your grade is: B" << endl;
-	}
-	else if (mark < 80 and mark >= 70)
-	{
-		cout << "Your grade is: C" << endl;
-	}
-	else if (mark < 70 and mark >= 60)
-	{
-		cout << "Your grade is: D" << endl;
-	}
-	else if (mark < 60 and mark >= 50)
-	{
-		cout << "Your grade is: E" << endl;
-	}
+	if (mark >= 90)
+		return 'A';
+	else if (mark >= 80)
+		return 'B';
+	else if (mark >= 70)
+		return 'C';
+	else if (mark >= 60)
+		return 'D';
+	else if (mark >= 50)
+		return 'E';
 	else
-	{
-		cout << "Your grade is: F" << endl;
-	}
+		return 'F';
 }
 
 int main()
 {
-	int mark;
-
-	read_mark(mark);
-	print_grade(mark);
-
+	cout << "Your grade is: " << get_grade_letter(read_number_in_range(0, 100)) << endl;;
 
 	return 0;
 }
