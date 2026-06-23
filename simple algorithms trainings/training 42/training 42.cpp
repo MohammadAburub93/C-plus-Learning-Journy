@@ -3,34 +3,55 @@
 
 using namespace std;
 
-int sec_calc(short days, short hours, short min, short sec)
+struct stTimeElements
 {
-	return ((days * 86400) + (hours * 3600) + (min * 60) + sec);
+	int days, hours, minutes, seconds;
+};
+
+int ReadPositiveNumber(string message)
+{
+	int number = 0;
+
+	do
+	{
+		cout << message << endl;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+
+stTimeElements ReadTimeElements()
+{
+	stTimeElements time;
+
+	time.days = ReadPositiveNumber("Please enter the number of days.");
+	time.hours = ReadPositiveNumber("Please enter the number of hours.");
+	time.minutes = ReadPositiveNumber("Please enter the number of minutes.");
+	time.seconds = ReadPositiveNumber("Please enter the number of seconds.");
+
+	return time;
+}
+
+
+int SecondsCalculation(stTimeElements time)
+{
+	int TotalTimeInSeconds = 0;
+
+	TotalTimeInSeconds = time.days * 86400;
+	TotalTimeInSeconds += time.hours * 3600;
+	TotalTimeInSeconds += time.minutes * 60;
+	TotalTimeInSeconds += time.seconds;
+
+	return TotalTimeInSeconds;
 }
 
 
 int main()
 {
+	stTimeElements Time = ReadTimeElements();
 
-	short int days, hours, min, sec;
-	int total_sec;
-
-	cout << "Please enter the number of days.\n";
-	cin >> days;
-
-	cout << "Please enter the number of hours.\n";
-	cin >> hours;
-
-	cout << "Please enter the number of minutes.\n";
-	cin >> min;
-
-	cout << "Please enter the number of seconds.\n";
-	cin >> sec;
-
-	total_sec = sec_calc(days, hours, min, sec);
-
-	cout << "The total second of your task is: " << round(total_sec) << endl;
-
+	cout << "The total second of your task is: " << round(SecondsCalculation(Time)) << endl;
 
 	return 0;
 }
