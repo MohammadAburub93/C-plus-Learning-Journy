@@ -1,35 +1,42 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-void read_value(short& num)
+float ReadNumber(string message)
 {
-	cout << "Please enter your number?" << endl;
-	cin >> num;
+	float number = 0;
+	cout << message << endl;
+	cin >> number;
+
+	return number;
 }
 
-int sum_calc(short num)
+float NumbersSum()
 {
-	int result = 0;
+	float sum = 0, number = 0;
+	int count = 1;
 
-	for (num; num != -99; read_value(num))
+	do
 	{
-		result = result + num;
-	}
+		number = ReadNumber("Please enter the value of number count " + to_string(count));
+		if (number == -99)
+			break;
+		
+		sum += number;
+		count++;
+	} while (number != -99);
 
-	return result;
+	return sum;
 }
 
 int main()
 {
-	short num;
-	int sum;
+	float result = 0;
 
-	read_value(num);
-	sum = sum_calc(num);
+	result = NumbersSum();
 
-	cout << "\n**************************\n";
-	cout << sum << endl;
+	cout <<"\nThe Result is: " <<  result << endl;
 
 	return 0;
 }
