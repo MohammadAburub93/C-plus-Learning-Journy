@@ -3,31 +3,62 @@
 
 using namespace std;
 
-void sec_value(int days, int hours, int min, int sec)
+struct stTimeElements
 {
-	cout << "This value of second in form of days:hours:minutes:seconds is: " << round(days) << ":" << round(hours) << ":" << round(min) << ":" << round(sec) << endl;
+	int days, hours, minutes, seconds;
+};
+
+int ReadPositiveNumber(string message)
+{
+	int number = 0;
+
+	do
+	{
+		cout << message << endl;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
 }
+
+stTimeElements ReadTimeElements(int TotalSeconds)
+{
+	stTimeElements time;
+
+	int SecondRemainder = 0;
+
+	const int SecondsPerDay = 86400;
+	const int SecondsPerHour = 3600;
+	const int SecondsPerMinute = 60;
+
+	time.days = floor(TotalSeconds / SecondsPerDay);
+	SecondRemainder = TotalSeconds % SecondsPerDay;
+
+	time.hours = floor(SecondRemainder / SecondsPerHour);
+	SecondRemainder = SecondRemainder % SecondsPerHour;
+
+	time.minutes = floor(SecondRemainder / SecondsPerMinute);
+	SecondRemainder = SecondRemainder % SecondsPerMinute;
+
+	time.seconds = SecondRemainder;
+	
+	return time;
+}
+
+
+void PrintTimeElementsValues(stTimeElements Time, int TotalSeconds)
+{
+	cout << "The total seconds of " << TotalSeconds << " equal to the follwing in term of days:hours:minutes:seconds\n";
+	cout << "\n******************\n";
+	cout << Time.days << ":" << Time.hours << ":" << Time.minutes << ":" << Time.seconds << endl;
+}
+
 
 int main()
 {
-	int total_sec, days, hours, min, sec, remainder_sec;
+	int TotalSeconds = ReadPositiveNumber("Please enter a pistive number for total seconds.");
 
-	cout << "Please enter the total value of seconds." << endl;
-	cin >> total_sec;
-
-	days = total_sec / 86400;
-	remainder_sec = total_sec - (days * 86400);
-
-	hours = remainder_sec / 3600;
-	remainder_sec = remainder_sec - (hours * 3600);
-
-	min = remainder_sec / 60;
-	remainder_sec = remainder_sec - (min * 60);
-
-	sec = remainder_sec;
-
-	sec_value(days, hours, min, sec);
-	
+	PrintTimeElementsValues(ReadTimeElements(TotalSeconds), TotalSeconds);
 
 	return 0;
 }
