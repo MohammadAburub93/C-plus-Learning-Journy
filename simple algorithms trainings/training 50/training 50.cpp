@@ -2,65 +2,52 @@
 
 using namespace std;
 
-bool trial_valid(short &count)
+string ReadPinCode()
 {
+	string PinCode;
 
-	while (count < 3)
-	{
-		count++;
-		return true;
-	}
+	cout << "Please enter th PIN" << endl;
+	cin >> PinCode;
 
-	return false;
-	
+	return PinCode;
 }
 
-void read_pin(short& pin)
+bool Login()
 {
-	cout << "Please enter yor pin?\n";
-	cin >> pin;
-}
+	string Pin;
+	int count = 1;
 
-bool check_pin(short& pin, short count)
-{
-	if (pin == 1234)
+	do
 	{
-		return true;
-	}
-	else
-	{
-		if (trial_valid(count))
+		Pin = ReadPinCode();
+
+		if (Pin == "1234")
 		{
-			cout << "It's a wrong pin, Please try again?" << endl;
-			cin >> pin;
-			check_pin(pin, count);
+			return 1;
 		}
 		else
 		{
-			return false;
+			cout << "\nWrong Pin\n";
+			system("color 4F");
+			count++;
 		}
-	}
-}
 
-void print_screen_result(short pin, short count)
-{
-	if (check_pin(pin, count))
-	{
-		cout << "Your Balance is: 7500" << endl;
-	}
-	else
-	{
-		cout << "Sorry, you are out of trials, the card is blocked" << endl;
-	}
+	} while (Pin != "1234" && count <=3);
+
+	return 0;
 }
 
 int main()
 {
-	short count = 1;
-	short pin;
-
-	read_pin(pin);
-	print_screen_result(pin, count);
+	if (Login())
+	{
+		system("color 2F");
+		cout << "\nYour account balance is: " << 7500 << endl;
+	}
+	else
+	{
+		cout << "\nSorry, you are out of trials, the card is blocked\n";
+	}
 
 	return 0;
 }
