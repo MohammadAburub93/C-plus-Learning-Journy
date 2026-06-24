@@ -2,51 +2,57 @@
 
 using namespace std;
 
-void read_day(short &day)
+enum enWeekDays {Sun = 1, Mon = 2, Tue = 3, Wed = 4, Thu = 5, Fri = 6, Sat = 7};
+
+int ReadNumberInRange(string message, int From, int To)
 {
-	cout << "Please enter thr day number?" << endl;
-	cin >> day;
+	int number;
+
+	do
+	{
+		cout << message << endl;
+		cin >> number;
+	} while (number < From || number > To);
+
+	return number;
 }
 
-void print_day_name(short day)
+enWeekDays ReadWeekDayNumber()
+{
+	return (enWeekDays)ReadNumberInRange("Please enter the day number between 1 and 7?", 1, 7);
+}
+
+string GetWeekDay(enWeekDays day)
 {
 	
 	switch (day) {
 
-	case 1:
-		cout << "It's Sunday" << endl;
-		break;
-	case 2:
-		cout << "It's Monday" << endl;
-		break;
-	case 3:
-		cout << "It's Tuesday" << endl;
-		break;
-	case 4:
-		cout << "It's Wednesday" << endl;
-		break;
-	case 5:
-		cout << "It's Thursday" << endl;
-		break;
-	case 6:
-		cout << "It's Friday" << endl;
-		break;
-	case 7:
-		cout << "It's Saturday" << endl;
-		break;
+	case enWeekDays :: Sun:
+		return "Sunday";
+	case enWeekDays::Mon:
+		return "Monday";
+	case enWeekDays::Tue:
+		return "Tuesday";
+	case enWeekDays::Wed:
+		return "Wednesday";
+	case enWeekDays::Thu:
+		return "Thursday";
+	case enWeekDays::Fri:
+		return "Friday";
+	case enWeekDays::Sat:
+		return "Saturday";
 	default:
-		cout << "Not a valid day number\n";
+		return "Not a valid day number\n";
 	}
 	
 }
 
 int main()
 {
-	short day;
-	
-	read_day(day);
-	print_day_name(day);
+	string WeekDay;
 
+	WeekDay = GetWeekDay(ReadWeekDayNumber());
+	cout << "\nBased on the number you give it's " << WeekDay << endl;
 
 	return 0;
 }
