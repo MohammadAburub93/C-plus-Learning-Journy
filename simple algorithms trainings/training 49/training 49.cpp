@@ -2,27 +2,46 @@
 
 using namespace std;
 
-void read_pin(int &pin)
+string ReadPinCode()
 {
-	cout << "Please enter the your pin?" << endl;
-	cin >> pin;
+	string PinCode;
+
+	cout << "Please enter th PIN" << endl;
+	cin >> PinCode;
+
+	return PinCode;
+}
+
+bool Login()
+{
+	string Pin;
+
+	do
+	{
+		Pin = ReadPinCode();
+
+		if (Pin == "1234")
+		{
+			return 1;
+		}
+		else
+		{
+			cout << "\nWrong Pin\n";
+			system("color 4F");
+		}
+
+	} while (Pin != "1234");
+
+	return 0;
 }
 
 int main()
 {
-	int pin;
-
-	read_pin(pin);
-
-	if (pin == 1234)
+	if (Login())
 	{
-		cout << "Your balance is: 7500" << endl;
+		system("color 2F");
+		cout << "\nYour account balance is: " << 7500 << endl;
 	}
-	else
-	{
-		cout << "Wrong pin" << endl;
-	}
-
 
 	return 0;
 }
