@@ -1,20 +1,31 @@
 #include <iostream>
 using namespace std;
 
+int ReadPositiveNumber(string message)
+{
+	int number;
+
+	do
+	{
+		cout << message << endl;
+		cin >> number;
+	} while (number < 0);
+
+	return number;
+}
+
+float CalculateNumberOfPayments(int TotalLoan, int TotalMonths)
+{
+	return (float)TotalLoan / TotalMonths;
+}
 int main()
 {
-	short int t_loan, payment, t_months;
+	int TotalLoan = 0, TotalMonths = 0;
 
-	cout << "Please enter the total amount of loan you have." << endl;
-	cin >> t_loan;
+	TotalLoan = ReadPositiveNumber("Please enter the total amount of loan you have.");
+	TotalMonths = ReadPositiveNumber("Please enter the number of months you will pay.");
 
-	cout << "Please enter the number of months you have to pay." << endl;
-	cin >> t_months;
-
-	payment = t_loan / t_months;
-
-	cout << "The amount you have to pay monthly is: " << payment;
+	cout << "The total number of months you have to pay is: " << CalculateNumberOfPayments(TotalLoan, TotalMonths) << " Months.\n";
 
 	return 0;
-
 }
