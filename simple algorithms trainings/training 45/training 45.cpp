@@ -2,64 +2,68 @@
 
 using namespace std;
 
-void read_month(short& month)
+enum enMonthsNames { Jan = 1, Feb = 2, Mar = 3, Apr = 4, May = 5,
+	Jun = 6, Jul = 7, Aug = 8, Sep = 9, Oct = 10, Nov = 11, Dec = 12 };
+
+int ReadNumberInRange(string message, int From, int To)
 {
-	cout << "Please enter the month number?" << endl;
-	cin >> month;
+	int number;
+
+	do
+	{
+		cout << message << endl;
+		cin >> number;
+	} while (number < From || number > To);
+
+	return number;
 }
 
-void print_month_name(short month)
+enMonthsNames ReadMonthNumber()
 {
-	switch (month) {
+	return (enMonthsNames)ReadNumberInRange("Please enter the day number between 1 and 12?", 1, 12);
+}
 
-	case 1:
-		cout << "It's January" << endl;
-		break;
-	case 2:
-		cout << "It's February" << endl;
-		break;
-	case 3:
-		cout << "It's March" << endl;
-		break;
-	case 4:
-		cout << "It's April" << endl;
-		break;
-	case 5:
-		cout << "It's May" << endl;
-		break;
-	case 6:
-		cout << "It's June" << endl;
-		break;
-	case 7:
-		cout << "It's July" << endl;
-		break;
-	case 8:
-		cout << "It's August" << endl;
-		break;
-	case 9:
-		cout << "It's September" << endl;
-		break;
-	case 10:
-		cout << "It's October" << endl;
-		break;
-	case 11:
-		cout << "It's November" << endl;
-		break;
-	case 12:
-		cout << "It's December" << endl;
-		break;
+string GetMonthName(enMonthsNames day)
+{
+
+	switch (day) {
+
+	case enMonthsNames::Jan:
+		return "January";
+	case enMonthsNames::Feb:
+		return "February";
+	case enMonthsNames::Mar:
+		return "March";
+	case enMonthsNames::Apr:
+		return "April";
+	case enMonthsNames::May:
+		return "May";
+	case enMonthsNames::Jun:
+		return "June";
+	case enMonthsNames::Jul:
+		return "July";
+	case enMonthsNames::Aug:
+		return "August";
+	case enMonthsNames::Sep:
+		return "September";
+	case enMonthsNames::Oct:
+		return "October";
+	case enMonthsNames::Nov:
+		return "November";
+	case enMonthsNames::Dec:
+		return "December";
 	default:
-		cout << "Not a valid month number" << endl;
+		return "Not a valid month number\n";
 	}
+
 }
 
 int main()
 {
-	short month;
+	string MonthName;
 
-	read_month(month);
-	print_month_name(month);
-
+	MonthName = GetMonthName(ReadMonthNumber());
+	cout << "\nBased on the number you give it's " << MonthName << endl;
 
 	return 0;
 }
