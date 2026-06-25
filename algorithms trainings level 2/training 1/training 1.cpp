@@ -4,18 +4,29 @@ using namespace std;
 void HeaderPrint()
 {
 	cout << "\n\t\t\tMultiplication Table From 1 to 10\t\t\n\n";
-	cout << "\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\n\n";
-	cout << "----------------------------------------------------------------------------------------\n";
+
+	for (int i = 1; i <= 10; i++)
+	{
+		cout << "\t" << i;
+	}
+
+	cout << "\n----------------------------------------------------------------------------------------\n";
+}
+
+string PrintColumnSeperator(int i)
+{
+	if (i != 10)
+		return "  |";
+	else
+		return " |";
 }
 
 void PrintingMultiplicationTable()
 {
+	HeaderPrint();
 	for (int i = 1; i <= 10; i++)
 	{
-		if (i != 10)
-			cout << i << "  |";
-		else
-			cout << i << " |";
+		cout << i << PrintColumnSeperator(i);
 		
 		for (int m = 1; m <= 10; m++)
 		{
@@ -26,7 +37,6 @@ void PrintingMultiplicationTable()
 }
 int main()
 {
-	HeaderPrint();
 	PrintingMultiplicationTable();
 	return 0;
 }
