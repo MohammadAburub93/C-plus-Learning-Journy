@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-enum enPerfectNotPerfect {Perfect = 1, NotPerfect = 2};
 
 int ReadPositiveNumber(string message)
 {
@@ -16,7 +15,7 @@ int ReadPositiveNumber(string message)
 	return number;
 }
 
-enPerfectNotPerfect isPerfectNumber(int number)
+bool isPerfectNumber(int number)
 {
 	int DivSum = 0;
 
@@ -28,26 +27,15 @@ enPerfectNotPerfect isPerfectNumber(int number)
 		}
 	}
 
-	{
-		if (number == DivSum)
-			return enPerfectNotPerfect::Perfect;
-		else
-			return enPerfectNotPerfect::NotPerfect;
-	}
+	return number == DivSum;
 }
 
 void PrintPerfectNumberStatus(int number)
 {
-	
-	switch (isPerfectNumber(number))
-	{
-	case enPerfectNotPerfect::Perfect:
+	if (isPerfectNumber(number))
 		cout << number << " is perfect number";
-		break;
-	case enPerfectNotPerfect::NotPerfect:
+	else
 		cout << number << " is not perfect number";
-		break;
-	}
 }
 
 int main()

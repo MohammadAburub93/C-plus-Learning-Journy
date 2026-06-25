@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Perfect Number Training.vcxproj" />
+  <Project Path="Perfect Number Training.vcxproj" Id="f24ccd64-dd21-4ea8-b4e1-5f64b1a44c2d" />
 </Solution>
