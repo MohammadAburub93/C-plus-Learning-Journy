@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="palindrome number training.vcxproj" Id="e096e7e0-478e-447b-b9ba-c0ae8218d80f" />
+</Solution>
