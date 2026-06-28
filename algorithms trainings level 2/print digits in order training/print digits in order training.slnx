@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="print digits in order training.vcxproj" Id="09c67066-5976-499c-a71e-68c11a0148b4" />
+</Solution>
