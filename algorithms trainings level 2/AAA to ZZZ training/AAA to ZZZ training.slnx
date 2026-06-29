@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="AAA to ZZZ training.vcxproj" Id="72f18a05-4b25-4eb1-b072-84985227e71e" />
+</Solution>
