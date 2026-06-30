@@ -43,14 +43,11 @@ int ElementRepeationCount(int arr[100], int ArrayLength, int ValueToCheck)
 	return count;
 }
 
-void PrintElementsAndRepeationCount(int arr[100], short ElementsCount, short ValueToCheck)
+void PrintArrayElements(int arr[100], int ArrayLength)
 {
 	cout << "\nOriginal array: ";
-	for (int i = 0; i < ElementsCount; i++)
+	for (int i = 0; i < ArrayLength; i++)
 		cout << arr[i] << " ";
-
-	cout << "\n\n" << ValueToCheck << " is repeated " << ElementRepeationCount(arr, ElementsCount, ValueToCheck);
-	cout << " Time(s)." << endl;
 }
 
 int main()
@@ -61,7 +58,11 @@ int main()
 
 	ValueToCheck = ReadPositiveNumber("Please enter the number you want to check");
 
-	PrintElementsAndRepeationCount(arr, ArrayLength, ValueToCheck);
+	PrintArrayElements(arr, ArrayLength);
+
+	cout << "\n\n" << ValueToCheck << " is repeated ";
+	cout << ElementRepeationCount(arr, ArrayLength, ValueToCheck);
+	cout << " time(s)." << endl;
 
 
 	return 0;
