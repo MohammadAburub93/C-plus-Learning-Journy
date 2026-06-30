@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="keys generation training.vcxproj" Id="6f8fc765-6ec1-4ace-864b-c95968147ce2" />
+</Solution>
