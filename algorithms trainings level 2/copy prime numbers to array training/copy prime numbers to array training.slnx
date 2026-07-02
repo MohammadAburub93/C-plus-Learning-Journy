@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="copy prime numbers to array training.vcxproj" Id="01e36800-49c0-4449-9597-983a4d3cf498" />
+</Solution>
