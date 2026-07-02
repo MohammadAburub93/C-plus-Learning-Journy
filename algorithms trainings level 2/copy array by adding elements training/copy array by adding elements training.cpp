@@ -2,19 +2,6 @@
 #include <cstdlib>
 using namespace std;
 
-int ReadPositiveNumber(string message)
-{
-	int Number;
-
-	do
-	{
-		cout << message << endl;
-		cin >> Number;
-	} while (Number <= 0);
-
-	return Number;
-}
-
 int RandomNumber(int From, int To)
 {
 	int RandomNumber = rand() % (To - From + 1) + From;
