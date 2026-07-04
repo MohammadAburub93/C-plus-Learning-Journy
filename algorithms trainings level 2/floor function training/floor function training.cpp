@@ -24,9 +24,9 @@ int main()
 {
 	float Number = ReadNumber();
 
-	cout << "My ABS result : " << MyFloor(Number) << endl;
+	cout << "My floor result : " << MyFloor(Number) << endl;
 
-	cout << "C++ ABS result : " << floor(Number) << endl;
+	cout << "C++ floor result : " << floor(Number) << endl;
 
 	return 0;
 }
