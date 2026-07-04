@@ -4,7 +4,7 @@ using namespace std;
 
 float ReadNumber()
 {
-	int Number;
+	float Number;
 
 	cout << "Please enter a number" << endl;
 	cin >> Number;

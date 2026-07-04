@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="ABS function training.vcxproj" />
+  <Project Path="ABS function training.vcxproj" Id="00f566d0-ed56-43d3-939f-d7675ff489c3" />
 </Solution>
