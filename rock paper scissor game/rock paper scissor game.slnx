@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="rock paper scissor game.vcxproj" Id="74c61809-5ab1-4fce-843e-477682400bea" />
+</Solution>
