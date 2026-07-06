@@ -2,7 +2,7 @@
 #include <cstdlib>
 using namespace std;
 
-enum enDifficultyLevel { Easy = 1, Med = 2, Hard = 3, M = 4 };
+enum enDifficultyLevel { Easy = 1, Med = 2, Hard = 3, D_Mix = 4 };
 enum enOperationType { Add = 1, Sub = 2, Mul = 3, Div = 4, Mix = 5 };
 enum enQuestionResult {Right = 1, Wrong = 2};
 
@@ -92,20 +92,14 @@ short GetValue(enDifficultyLevel QuestionLevel)
 			break;
 		case enDifficultyLevel::Med:
 			return RandomNumber(10, 30);
+			break;
 		case enDifficultyLevel::Hard:
 			return RandomNumber(30, 70);
 			break;
-		case enDifficultyLevel::M:
-			return RandomNumber(1, 70);
+		case enDifficultyLevel::D_Mix:
+			return GetValue((enDifficultyLevel)RandomNumber(1,3));
 			break;
 	}
-}
-
-char GetRandomOperationType()
-{
-
-	char OpType[4] = { '+', '-', '*', '/'};
-	return OpType[RandomNumber(1,4) - 1];
 }
 
  char GetOperationType(enOperationType OperationType)
@@ -125,7 +119,7 @@ char GetRandomOperationType()
 		return '/';
 		break;
 	case enOperationType::Mix:
-		return GetRandomOperationType();
+		return GetOperationType((enOperationType)RandomNumber(1,4));
 		break;
 	}
 }
