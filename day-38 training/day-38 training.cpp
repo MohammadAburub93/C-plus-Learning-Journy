@@ -14,5 +14,8 @@ int main()
 
 	cout << Number;
 
+	int NUmberBetween1And10 = MyInputLib::ReadNumberInRange(1, 10);
+	cout << NUmberBetween1And10;
+
 	return 0;
 }

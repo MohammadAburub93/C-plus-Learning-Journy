@@ -16,4 +16,18 @@ namespace MyInputLib
 
 		return Number;
 	}
+
+	int ReadNumberInRange(int From, int To)
+	{
+		int Number;
+
+		do
+		{
+			cout << "Please enter a number from " << From << " To " << To << endl;
+			cin >> Number;
+		} while (Number < From || Number > To);
+		
+		
+		return Number;
+	}
 }
