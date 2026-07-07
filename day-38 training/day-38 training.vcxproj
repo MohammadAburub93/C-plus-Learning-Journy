@@ -141,6 +141,10 @@
   <ItemGroup>
     <ClCompile Include="day-38 training.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyInputLib.h" />
+    <ClInclude Include="MyLib.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
