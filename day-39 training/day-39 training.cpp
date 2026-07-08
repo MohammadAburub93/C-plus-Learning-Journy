@@ -3,11 +3,10 @@ using namespace std;
 
 int main()
 {
-	int Mark = 65;
+	int Number = 9;
 	string result = "";
-
-	//Using short hand if
-	result = (Mark >= 90) ? "A" : (Mark >= 80) ? "B" : (Mark >= 70) ? "C" : (Mark >= 60) ? "D" : "F";
+	
+	result = (Number > 0) ? "Positive Number" : "Negative Number";
 
 	cout << result << endl;
 
