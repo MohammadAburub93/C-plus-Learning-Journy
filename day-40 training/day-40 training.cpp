@@ -1,20 +1,17 @@
 #include <iostream>
 using namespace std;
 
-//Function decleration
-void add(int, int);
-
+int MySum(int a, int b, int c = 0, int d = 0)
+{
+	return (a + b + c + d);
+}
 
 int main()
 {
-	add(1, 5);
+	cout << MySum(10, 20) << endl;
+	cout << MySum(10, 20, 30) << endl;
+	cout << MySum(10, 20, 30, 40) << endl;
 
 	return 0;
 }
 
-
-//Function definition
-void add(int a, int b)
-{
-	cout << a + b << endl;
-}
