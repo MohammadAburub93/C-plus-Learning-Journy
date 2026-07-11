@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
 
-int MySum(int a, int b, int c = 0, int d = 0)
+//optinal Parameters
+int MyMulFun(int a, int b, int c = 1)
 {
-	return (a + b + c + d);
+	return (a * b * c);
 }
 
 int main()
 {
-	cout << MySum(10, 20) << endl;
-	cout << MySum(10, 20, 30) << endl;
-	cout << MySum(10, 20, 30, 40) << endl;
-
+	cout << MyMulFun(5, 5) << endl;
+	cout << MyMulFun(5, 5, 5) << endl;
+ 
 	return 0;
 }
 
