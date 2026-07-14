@@ -1,31 +1,29 @@
 #include <iostream>
 using namespace std;
 
-double MySum(double a, double b)
+void Function4()
 {
-	return (a + b);
+	cout << "I'm Function 4" << endl;
 }
 
-int MySum(int a, int b)
+void Function3()
 {
-	return (a + b);
+	Function4();
 }
 
-int MySum(int a, int b, int c)
+void Function2()
 {
-	return (a + b + c);
+	Function3();
 }
 
-int MySum(int a, int b, int c, int d)
+void Function1()
 {
-	return (a + b + c + d);
+	Function2();
 }
 
 int main()
 {
-	cout << MySum(10, 20) << endl;
-	cout << MySum(10.1, 20.1) << endl;
-	cout << MySum(10, 20, 30) << endl;
-	cout << MySum(10, 20, 30, 40) << endl;
+	Function1();
+
 	return 0;
 }
