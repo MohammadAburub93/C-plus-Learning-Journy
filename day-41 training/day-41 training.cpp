@@ -1,29 +1,19 @@
 #include <iostream>
 using namespace std;
 
-void Function4()
+void PrintNumbers(int N, int M)
 {
-	cout << "I'm Function 4" << endl;
-}
 
-void Function3()
-{
-	Function4();
-}
-
-void Function2()
-{
-	Function3();
-}
-
-void Function1()
-{
-	Function2();
+	if (N <= M)
+	{
+		cout << N << endl;
+		PrintNumbers(N + 1, M);
+	}
 }
 
 int main()
 {
-	Function1();
+	PrintNumbers(1,10);
 
 	return 0;
 }
