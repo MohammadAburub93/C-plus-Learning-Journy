@@ -1,19 +1,23 @@
 #include <iostream>
 using namespace std;
 
-void PrintNumbers(int N, int M)
+int MyPowFun(int Base, int Power)
 {
 
-	if (N >= M)
+	if (Power == 0)
 	{
-		cout << N << endl;
-		PrintNumbers(N - 1, M);
+		return 1;
 	}
+	else
+	{
+		return (Base * MyPowFun(Base, Power - 1));
+	}
+
 }
 
 int main()
 {
-	PrintNumbers(10,1);
+	cout << MyPowFun(2, 3) << endl;
 
 	return 0;
 }
