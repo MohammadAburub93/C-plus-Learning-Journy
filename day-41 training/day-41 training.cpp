@@ -4,16 +4,16 @@ using namespace std;
 void PrintNumbers(int N, int M)
 {
 
-	if (N <= M)
+	if (N >= M)
 	{
 		cout << N << endl;
-		PrintNumbers(N + 1, M);
+		PrintNumbers(N - 1, M);
 	}
 }
 
 int main()
 {
-	PrintNumbers(1,10);
+	PrintNumbers(10,1);
 
 	return 0;
 }
