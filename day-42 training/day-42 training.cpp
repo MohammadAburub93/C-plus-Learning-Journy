@@ -1,18 +1,15 @@
 #include <iostream>
 using namespace std;
 
-void MyFunc()
-{
-	static int Number = 1;
-	cout << "Value of Number: " << Number << endl;
-	Number++;
-}
-
 int main()
 {
-	MyFunc();
-	MyFunc();
-	MyFunc();
+	auto x = 10;
+	auto y = 12.5;
+	auto z = "Mohammad Aburub";
+
+	cout << x << endl;
+	cout << y << endl;
+	cout << z << endl;
 
 	return 0;
 }
