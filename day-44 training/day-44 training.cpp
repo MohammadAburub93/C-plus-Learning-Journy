@@ -6,19 +6,19 @@ using namespace std;
 int main()
 {
 
-	float PI = 3.14159265;
+	char Name[] = "Mohammad Aburub";
+	char SchoolName[] = "Al Qabisi";
 
-	printf("Precision specification of %.*f\n", 1, PI);
-	printf("Precision specification of %.*f\n", 2, PI);
-	printf("Precision specification of %.*f\n", 3, PI);
-	printf("Precision specification of %.*f\n", 4, PI);
+	printf("Dear %s, How are you?\n\n", Name);
+	printf("Welcome to %s School!\n\n", SchoolName);
 
-	float x = 7.0, y = 9.0;
-	printf("\nThe float division is: %.3f / %.3f = %.3f \n\n", x, y, x / y);
+	char c = 'S';
 
-	double d = 12.45;
-	printf("The double value is: %.3f \n", d);
-	printf("The double value is: %.4f \n", d);
+	printf("Setting the width of c : %*c \n", 1, c);
+	printf("Setting the width of c : %*c \n", 2, c);
+	printf("Setting the width of c : %*c \n", 3, c);
+	printf("Setting the width of c : %*c \n", 4, c);
+	printf("Setting the width of c : %*c \n", 5, c);
 
 	return 0;
 }
