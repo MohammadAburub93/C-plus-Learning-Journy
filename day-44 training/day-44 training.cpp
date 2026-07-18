@@ -1,24 +1,23 @@
 #include <iostream>
-#include <cstdio>
+#include <iomanip>
 
 using namespace std;
 
 int main()
 {
 
-	char Name[] = "Mohammad Aburub";
-	char SchoolName[] = "Al Qabisi";
+	cout << "------------|--------------------------------|------------|" << endl;
+	cout << "    Code    |               Name             |     Mark   |" << endl;
+	cout << "------------|--------------------------------|------------|" << endl;
 
-	printf("Dear %s, How are you?\n\n", Name);
-	printf("Welcome to %s School!\n\n", SchoolName);
+	/*cout << "C101 " << "|" << "Introduction to programming 1" << "|" << "95" << "|" << endl;
+	cout << "C102 " << "|" << "Computer Hardware" << "|" << "88" << "|" << endl;
+	cout << "C10352 " << "|" << "Network" << "|" << "75" << "|" << endl;
+	cout << "------------|--------------------------------|-------------" << endl;*/
 
-	char c = 'S';
-
-	printf("Setting the width of c : %*c \n", 1, c);
-	printf("Setting the width of c : %*c \n", 2, c);
-	printf("Setting the width of c : %*c \n", 3, c);
-	printf("Setting the width of c : %*c \n", 4, c);
-	printf("Setting the width of c : %*c \n", 5, c);
-
+	cout << setw(12) << "C101" << "|" << setw(32) << "Introduction to programming 1" << "|" << setw(12) << "95" << "|" << endl;
+	cout << setw(12) << "C102" << "|" << setw(32) << "Computer Hardware" << "|" << setw(12) << "88" << "|" << endl;
+	cout << setw(12) << "C10352" << "|" << setw(32) << "Network" << "|" << setw(12) << "75" << "|" << endl;
+	cout << "------------|--------------------------------|-------------|" << endl;
 	return 0;
 }
