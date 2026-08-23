@@ -4,11 +4,17 @@ using namespace std;
 
 int main()
 {
-	vector <int> vNumbers = { 10, 20, 30, 40, 50 };
+	vector <int> vNumbers;
 
-	cout << "Numbers Vector = ";
+	vNumbers.push_back(10);
+	vNumbers.push_back(20);
+	vNumbers.push_back(30);
+	vNumbers.push_back(40);
+	vNumbers.push_back(50);
 
-	for (int &Number : vNumbers)
+	cout << "Numbers Vector: ";
+
+	for (int & Number : vNumbers)
 	{
 		cout << Number << " ";
 	}
