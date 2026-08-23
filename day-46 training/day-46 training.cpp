@@ -2,52 +2,54 @@
 #include <vector>
 using namespace std;
 
-void ReadNumbers(vector <int>  &vNUmbers)
+struct stEmployeeInfo
 {
-	int Number = 0;
+	string FirstName;
+	string LastName;
+	float Salary;
+};
+
+void ReadEmployeeInfo(vector <stEmployeeInfo>& vEmployees)
+{
+	stEmployeeInfo EmployeeToAdd;
 	char AddMore = 'y';
 
-	do
+	while (AddMore == 'y' || AddMore == 'Y')
 	{
-		cout << "Please enter a number?" << endl;
-		cin >> Number;
+		cout << "Please enter the employee first name? " << endl;
+		cin >> EmployeeToAdd.FirstName;
 
-		while (cin.fail())
-		{
-			cin.clear();
-			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		cout << "\nPlease enter the employee last name? " << endl;
+		cin >> EmployeeToAdd.LastName;
 
-			cout << "Invalid Number, Enter a valid one please:" << endl;
-			cin >> Number;
+		cout << "\nPlease enter the employee Salary? " << endl;
+		cin >> EmployeeToAdd.Salary;
 
-		}
+		vEmployees.push_back(EmployeeToAdd);
 
-		vNUmbers.push_back(Number);
-
-		cout << "Do you want to add more numbers? y/n" << endl;
-		
+		cout << "\nDo you want to add more employees? y/n" << endl;
 		cin >> AddMore;
-	} while (AddMore == 'y' || AddMore == 'Y');
+	}
 }
 
-void PrintNumbers(vector <int> & vNumbers)
+void PrintEmployeeInfo(vector <stEmployeeInfo> &vEmployees)
 {
-	cout << "vector Numbers are: ";
+	cout << "\n\nEmployees vector: \n\n";
 
-	for (int& Number : vNumbers)
+	for (stEmployeeInfo& Emplyee : vEmployees)
 	{
-		cout << Number << " ";
+		cout << "FirstName: " << Emplyee.FirstName << endl;
+		cout << "LastName: " << Emplyee.LastName << endl;
+		cout << "Salary: " << Emplyee.Salary << "\n\n";
 	}
-
-	cout << endl;
 }
 
 int main()
 {
-	vector <int> vNumbers;
-
-	ReadNumbers(vNumbers);
-	PrintNumbers(vNumbers);
+	vector <stEmployeeInfo> vEmployees;
+	
+	ReadEmployeeInfo(vEmployees);
+	PrintEmployeeInfo(vEmployees);
 
 	return 0;
 }
