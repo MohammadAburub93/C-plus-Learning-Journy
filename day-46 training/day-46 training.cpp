@@ -8,7 +8,7 @@ int main()
 
 	cout << "Numbers Vector = ";
 
-	for (int Number : vNumbers)
+	for (int &Number : vNumbers)
 	{
 		cout << Number << " ";
 	}
