@@ -13,21 +13,11 @@ int main()
 	vNumbers.push_back(40);
 	vNumbers.push_back(50);
 
-	cout << "Vector size is: " << vNumbers.size() << endl;
-
-	vNumbers.pop_back();
-	vNumbers.pop_back();
-	vNumbers.pop_back();
-	vNumbers.pop_back();
-	vNumbers.pop_back();
-
-	cout << "Vector size is: " << vNumbers.size() << endl;
-
-	if (!vNumbers.empty())
+	for (int i = vNumbers.size(); i > 0; i--)
+	{
 		vNumbers.pop_back();
+	}
 
-	if (vNumbers.size() > 0)
-		vNumbers.pop_back();
 
 	cout << "Numbers vector: \n\n";
 
