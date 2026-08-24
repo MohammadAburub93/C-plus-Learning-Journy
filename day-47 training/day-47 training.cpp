@@ -13,18 +13,14 @@ int main()
 	vNumbers.push_back(40);
 	vNumbers.push_back(50);
 
-	for (int i = vNumbers.size(); i > 0; i--)
-	{
-		vNumbers.pop_back();
-	}
+	cout << "First Element: " << vNumbers.front() << endl;
+	cout << "Last Element: " << vNumbers.back() << endl;
 
+	cout << "Size: " << vNumbers.size() << endl;
 
-	cout << "Numbers vector: \n\n";
+	cout << "Capacity: " << vNumbers.capacity() << endl;
 
-	for (int& Number : vNumbers)
-	{
-		cout << Number << endl;
-	}
-	
+	cout << "Empty: " << vNumbers.empty() << endl;
+
 	return 0;
 }
