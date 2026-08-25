@@ -1,17 +1,16 @@
 #include <iostream>
 using namespace std;
 
-void Function1(int &x)
-{
-	x++;
-}
-
 int main()
 {
 	int a = 10;
+	int& x = a;
+
+	cout << &a << endl;
+	cout << &x << endl;
 
 	cout << a << endl;
-	cout << &a << endl;
+	cout << x << endl;
 
 	return 0;
 }
