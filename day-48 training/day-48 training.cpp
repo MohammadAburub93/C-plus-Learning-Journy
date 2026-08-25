@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void Function1(int x)
+void Function1(int &x)
 {
 	x++;
 }
