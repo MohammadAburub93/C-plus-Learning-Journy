@@ -1,28 +1,27 @@
 #include <iostream>
 using namespace std;
 
+void swap(int *n1, int *n2)
+{
+	int temp;
+	temp = *n1;
+	*n1 = *n2;
+	*n2 = temp;
+}
+
 int main()
 {
-	int a = 10;
+	int a = 1, b = 2;
 
-	cout << "a value   = " << a << endl;
-	cout << "a address = " << &a << endl;
+	cout << "Before swapping" << endl;
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
 
-	int* p = &a;
+	swap(&a, &b);
 
-	cout << "pointer value = " << p << endl;
-
-	cout << "Value of the address that p is pointing to is " << *p << endl;
-
-	*p = 20;
-
-	cout << a << endl;
-	cout << *p << endl;
-
-	a = 30;
-
-	cout << a << endl;
-	cout << *p << endl;
+	cout << "\nAfter swapping" << endl;
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
 
 
 	return 0;
