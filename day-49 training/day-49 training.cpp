@@ -1,28 +1,25 @@
 #include <iostream>
 using namespace std;
 
-void swap(int *n1, int *n2)
-{
-	int temp;
-	temp = *n1;
-	*n1 = *n2;
-	*n2 = temp;
-}
-
 int main()
 {
-	int a = 1, b = 2;
+	int arr[4] = { 10, 20, 30, 40 };
+	int* ptr;
+	ptr = arr;
 
-	cout << "Before swapping" << endl;
-	cout << "a = " << a << endl;
-	cout << "b = " << b << endl;
+	cout << "Addresses are: \n";
 
-	swap(&a, &b);
+	cout << ptr << endl;
+	cout << ptr + 1 << endl;
+	cout << ptr + 2 << endl;
+	cout << ptr + 3 << endl;
 
-	cout << "\nAfter swapping" << endl;
-	cout << "a = " << a << endl;
-	cout << "b = " << b << endl;
+	cout << "\nValues are: \n";
 
+	cout << *(ptr) << endl;
+	cout << *(ptr + 1) << endl;
+	cout << *(ptr + 2) << endl;
+	cout << *(ptr + 3) << endl;
 
 	return 0;
 }
