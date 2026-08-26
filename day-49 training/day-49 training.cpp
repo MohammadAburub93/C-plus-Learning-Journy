@@ -1,25 +1,27 @@
 #include <iostream>
 using namespace std;
 
+struct stEmployee
+{
+	string Name;
+	float Salary;
+};
+
 int main()
 {
-	int arr[4] = { 10, 20, 30, 40 };
-	int* ptr;
-	ptr = arr;
+	stEmployee Employee1, * ptr;
 
-	cout << "Addresses are: \n";
+	Employee1.Name = "Mohammad Aburub";
+	Employee1.Salary = 2000;
 
-	cout << ptr << endl;
-	cout << ptr + 1 << endl;
-	cout << ptr + 2 << endl;
-	cout << ptr + 3 << endl;
+	cout << Employee1.Name << endl;
+	cout << Employee1.Salary << endl;
 
-	cout << "\nValues are: \n";
+	ptr = &Employee1;
 
-	cout << *(ptr) << endl;
-	cout << *(ptr + 1) << endl;
-	cout << *(ptr + 2) << endl;
-	cout << *(ptr + 3) << endl;
-
+	cout << "\nUsing Pointer: \n";
+	cout << ptr->Name << endl;
+	cout << ptr->Salary << endl;
+	
 	return 0;
 }
