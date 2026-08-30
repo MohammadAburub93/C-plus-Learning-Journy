@@ -3,21 +3,29 @@ using namespace std;
 
 int main()
 {
-	int* ptrX;
+	int num;
+	cout << "Enter total number of students: ";
+	cin >> num;
 
-	float* ptrY;
+	float* ptr;
 
-	ptrX = new int;
-	ptrY = new float;
+	ptr = new float[num];
 
-	*ptrX = 45;
-	*ptrY = 28.35f;
+	cout << "Enter grades of students." << endl;
 
-	cout << *ptrX << endl;
-	cout << *ptrY << endl;
+	for (int i = 0; i < num; ++i)
+	{
+		cout << "Student " << i + 1 << ": ";
+		cin >> *(ptr + i);
+	}
 
-	delete ptrX;
-	delete ptrY;
+	cout << "\nDisplaying grades of students." << endl;
+	for (int i = 0; i < num; ++i)
+	{
+		cout << "Student " << i + 1 << ": " << *(ptr + i) << endl;
+	}
+
+	delete[] ptr;
 
 	return 0;
 }
