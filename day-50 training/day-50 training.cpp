@@ -1,31 +1,22 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main()
 {
-	int num;
-	cout << "Enter total number of students: ";
-	cin >> num;
+	vector<int> num{ 1, 2, 3, 4, 5 };
 
-	float* ptr;
+	cout << "\n\n using .at(i) \n";
+	cout << "Element at Index 0: " << num.at(0) << endl;
+	cout << "Element at index 1: " << num.at(1) << endl;
+	cout << "Element at index 2: " << num.at(2) << endl;
+	cout << "Element at index 3: " << num.at(3) << endl;
 
-	ptr = new float[num];
-
-	cout << "Enter grades of students." << endl;
-
-	for (int i = 0; i < num; ++i)
-	{
-		cout << "Student " << i + 1 << ": ";
-		cin >> *(ptr + i);
-	}
-
-	cout << "\nDisplaying grades of students." << endl;
-	for (int i = 0; i < num; ++i)
-	{
-		cout << "Student " << i + 1 << ": " << *(ptr + i) << endl;
-	}
-
-	delete[] ptr;
+	cout << "\n\n using [i]\n";
+	cout << "Element at Index 0: " << num[0] << endl;
+	cout << "Element at Index 1: " << num[1] << endl;
+	cout << "Element at Index 2: " << num[2] << endl;
+	cout << "Element at Index 3: " << num[3] << endl;
 
 	return 0;
 }
