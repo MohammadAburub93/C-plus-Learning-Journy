@@ -3,20 +3,21 @@ using namespace std;
 
 int main()
 {
-	void * ptr;
+	int* ptrX;
 
-	float f1 = 10.5;
-	int x = 50;
+	float* ptrY;
 
-	ptr = &f1;
+	ptrX = new int;
+	ptrY = new float;
 
-	cout << ptr << endl;
+	*ptrX = 45;
+	*ptrY = 28.35f;
 
-	cout << *(static_cast<float*>(ptr)) << endl;
+	cout << *ptrX << endl;
+	cout << *ptrY << endl;
 
-	ptr = &x;
+	delete ptrX;
+	delete ptrY;
 
-	cout << ptr << endl;
-	cout << *(static_cast<int*>(ptr)) << endl;
 	return 0;
 }
