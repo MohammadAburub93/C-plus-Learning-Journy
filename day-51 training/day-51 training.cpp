@@ -1,40 +1,28 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 using namespace std;
 
 int main()
 {
-	string S1 = "My name is Mohammad Aburub, Ilearn programming";
+	char x;
+	char w;
 
-	cout << S1.length() << endl;
+	x = toupper('a');
+	w = tolower('A');
 
-	cout << S1.at(3) << endl;
 
-	S1.append(" @ProgrammingAdvices");
-	cout << S1 << endl;
+	cout << "converting a to A: " << x << endl;
+	cout << "converting A to a: " << w << endl;
 
-	S1.insert(7, " Tawfiq ");
-	cout << S1 << endl;
+	cout << "isupper('A') " << isupper('A') << endl;
 
-	cout << S1.substr(19, 8) << endl;
+	cout << "islower('a') " << islower('a') << endl;
 
-	S1.push_back('X');
-	cout << S1 << endl;
+	cout << "isdigit('9') " << isdigit('9') << endl;
 
-	S1.pop_back();
-	cout << S1 << endl;
+	cout << "ispunct(';') " << ispunct(';') << endl;
 
-	cout << S1.find("Tawfiq") << endl;
 
-	cout << S1.find("tawfiq") << endl;
-
-	if (S1.find("tawfiq") == S1.npos)
-	{
-		cout << "tawfiq is not found";
-	}
-
-	S1.clear();
-
-	cout << S1 << endl;
 	return 0;
 }
