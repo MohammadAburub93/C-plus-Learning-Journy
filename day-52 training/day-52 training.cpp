@@ -4,19 +4,55 @@
 #include <vector>
 using namespace std;
 
-void LoadDataFromFileToVector(string FileName, vector<string>& vFileContent)
+//void LoadDataFromFileToVector(string FileName, vector<string>& vFileContent)
+//{
+//	fstream File;
+//
+//	File.open(FileName, ios::in);
+//
+//	if (File.is_open())
+//	{
+//		string Line;
+//
+//		while (getline(File, Line))
+//		{
+//			vFileContent.push_back(Line);
+//		}
+//
+//		File.close();
+//	}
+//}
+//
+//
+//int main()
+//{
+//	vector<string> vFileContent;
+//
+//	LoadDataFromFileToVector("SecondFile.txt", vFileContent);
+//
+//	for (string &Line : vFileContent)
+//	{
+//		cout << Line << endl;
+//	}
+//
+//	return 0;
+//}
+
+void SaveVectorToFile(string FileName, vector <string> vFileContent)
 {
 	fstream File;
 
-	File.open(FileName, ios::in);
+	File.open(FileName, ios::out);
 
 	if (File.is_open())
 	{
-		string Line;
-
-		while (getline(File, Line))
+		for (string& Line : vFileContent)
 		{
-			vFileContent.push_back(Line);
+			if (Line != "") {
+
+				File << Line << endl;
+			}
+			
 		}
 
 		File.close();
@@ -26,14 +62,9 @@ void LoadDataFromFileToVector(string FileName, vector<string>& vFileContent)
 
 int main()
 {
-	vector<string> vFileContent;
+	vector <string> vFileContent{ "Ali", "Shadi", "Maher", "Fadi" };
 
-	LoadDataFromFileToVector("SecondFile.txt", vFileContent);
-
-	for (string &Line : vFileContent)
-	{
-		cout << Line << endl;
-	}
+	SaveVectorToFile("SecondFile.txt", vFileContent);
 
 	return 0;
 }
