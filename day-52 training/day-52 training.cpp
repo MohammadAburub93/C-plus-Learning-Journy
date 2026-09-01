@@ -6,12 +6,12 @@ int main()
 {
 	fstream SecondFile;
 
-	SecondFile.open("SecondFile.txt", ios::out);
+	SecondFile.open("SecondFile.txt", ios::out | ios::app);
 
 	if (SecondFile.is_open())
 	{
-		SecondFile << "This is the second file I create.\n";
-		SecondFile << "I created it in write mode.\n";
+		SecondFile << "Hi, this is a new line.\n";
+		SecondFile << "Hi, this is another new line.\n";
 
 		SecondFile.close();
 	}
