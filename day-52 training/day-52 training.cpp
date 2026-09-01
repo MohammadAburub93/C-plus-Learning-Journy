@@ -1,19 +1,30 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
+
+void PrintFileContent(string FileName)
+{
+	fstream File;
+
+	File.open(FileName, ios::in);
+
+	if (File.is_open())
+	{
+		string Line;
+
+		while (getline(File, Line))
+		{
+			cout << Line << endl;
+		}
+
+		File.close();
+	}
+}
 
 int main()
 {
-	fstream SecondFile;
+	PrintFileContent("SecondFile.txt");
 
-	SecondFile.open("SecondFile.txt", ios::out | ios::app);
-
-	if (SecondFile.is_open())
-	{
-		SecondFile << "Hi, this is a new line.\n";
-		SecondFile << "Hi, this is another new line.\n";
-
-		SecondFile.close();
-	}
 	return 0;
 }
