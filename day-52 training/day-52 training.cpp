@@ -1,9 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 using namespace std;
 
-void PrintFileContent(string FileName)
+void LoadDataFromFileToVector(string FileName, vector<string>& vFileContent)
 {
 	fstream File;
 
@@ -15,16 +16,24 @@ void PrintFileContent(string FileName)
 
 		while (getline(File, Line))
 		{
-			cout << Line << endl;
+			vFileContent.push_back(Line);
 		}
 
 		File.close();
 	}
 }
 
+
 int main()
 {
-	PrintFileContent("SecondFile.txt");
+	vector<string> vFileContent;
+
+	LoadDataFromFileToVector("SecondFile.txt", vFileContent);
+
+	for (string &Line : vFileContent)
+	{
+		cout << Line << endl;
+	}
 
 	return 0;
 }
