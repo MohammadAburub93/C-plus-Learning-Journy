@@ -8,12 +8,17 @@ int main()
 {
 	time_t t = time(0);
 
-	char* dt = ctime(&t);
-	cout << "Local date and time is: " << dt << "\n";
+	tm* now = localtime(&t);
 
-	tm* gmtm = gmtime(&t);
-	dt = asctime(gmtm);
-	cout << "UTC date and time is: " << dt << endl;
+	cout << "Year: " << now->tm_year + 1900 << endl;
+	cout << "Month: " << now->tm_mon + 1 << endl;
+	cout << "Day: " << now->tm_mday << endl;
+	cout << "Hour: " << now->tm_hour << endl;
+	cout << "Min: " << now->tm_min << endl;
+	cout << "Second: " << now->tm_sec << endl;
+	cout << "Week day (days since sunday): " << now->tm_wday << endl;
+	cout << "Year day (days since Jan 1st): " << now->tm_yday << endl;
+	cout << "Hours of daylight savings time: " << now->tm_isdst << endl;
 		
 	return 0;
 } 
