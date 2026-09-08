@@ -17,7 +17,7 @@ void FillMatrixWithRandomNumbers(int arr[3][3], short Rows, short Cols)
 	{
 		for (int j = 0; j < Cols; j++)
 		{
-			arr[i][j] = RandomNumber(1, 10);
+			arr[i][j] = RandomNumber(0, 1);
 		}
 	}
 }
@@ -36,13 +36,17 @@ void PrintMatrix(int arr[3][3], short Rows, short Cols)
 }
 
 
-bool AreMatricesTypical(int Mat1[3][3], int Mat2[3][3], short Rows, short Cols)
+bool IsIdentityMatrix(int Mat1[3][3], short Rows, short Cols)
 {
 	for (int i = 0; i < Rows; i++)
 	{
 		for (int j = 0; j < Cols; j++)
 		{
-			if (Mat1[i][j] != Mat2[i][j])
+			if (i == j && Mat1[i][j] != 1)
+			{
+				return false;
+			}
+			else if (i != j && Mat1[i][j] != 0)
 			{
 				return false;
 			}
@@ -57,25 +61,21 @@ int main()
 {
 	srand((unsigned)time(NULL));
 
-	int Mat1[3][3], Mat2[3][3];
+	int Mat1[3][3];
 
 	FillMatrixWithRandomNumbers(Mat1, 3, 3);
 
 	cout << "\nMatrix 1: \n\n";
 	PrintMatrix(Mat1, 3, 3);
+;
 
-	FillMatrixWithRandomNumbers(Mat2, 3, 3);
-
-	cout << "\nMatrix 2: \n\n";
-	PrintMatrix(Mat2, 3, 3);
-
-	if (AreMatricesTypical(Mat1, Mat1, 3, 3))
+	if (IsIdentityMatrix(Mat1, 3, 3))
 	{
-		cout << "\nYes: Matrices are typical.\n";
+		cout << "\nYes: Matrix is identity.\n";
 	}
 	else
 	{
-		cout << "\nNo: Matrices are not typical.\n";
+		cout << "\nNo: Matrix is not identity.\n";
 	}
 
 	system("pause>0");
