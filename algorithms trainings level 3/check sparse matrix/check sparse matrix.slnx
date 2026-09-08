@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="check sparse matrix.vcxproj" Id="6941813d-d49e-4d58-8cd5-59ec97d80ecc" />
+</Solution>
