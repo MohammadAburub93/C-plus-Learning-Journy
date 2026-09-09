@@ -38,17 +38,14 @@ void PrintMatrix(int arr[3][3], short Rows, short Cols)
 
 bool IsPalindromeMatrix(int Mat1[3][3], short Rows, short Cols)
 {
-	short RowBackwardPosition;
 	for (int i = 0; i < Rows; i++)
 	{
-		RowBackwardPosition = Cols - 1;
-		for (int j = 0; j < Cols; j++)
+		for (int j = 0; j < Cols / 2; j++)
 		{
-			if (Mat1[i][j] != Mat1[i][RowBackwardPosition])
+			if (Mat1[i][j] != Mat1[i][Cols - 1 - j])
 			{
 				return false;
 			}
-			RowBackwardPosition--;
 		}
 	}
 
