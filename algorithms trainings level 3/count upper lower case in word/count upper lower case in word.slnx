@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="count upper lower case in word.vcxproj" />
+  <Project Path="count upper lower case in word.vcxproj" Id="b0c58fa8-2eee-414c-b856-5b33f01fc912" />
 </Solution>

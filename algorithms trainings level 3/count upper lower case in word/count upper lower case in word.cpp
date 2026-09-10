@@ -4,6 +4,8 @@
 
 using namespace std;
 
+enum enWhatToCount { SmallLetters = 0, CapitalLetters = 1, All = 3 };
+
 string ReadString()
 {
 	string Text;
@@ -14,8 +16,31 @@ string ReadString()
 	return Text;
 }
 
+short CountLetters(string Text, enWhatToCount WhatToCount = enWhatToCount::All)
+{
+	if (WhatToCount == enWhatToCount::All)
+	{
+		return Text.length();
+	}
 
+	short Counter = 0;
 
+	for (short i = 0; i < Text.length(); i++)
+	{
+		if (WhatToCount == enWhatToCount::CapitalLetters && isupper(Text[i]))
+		{
+			Counter++;
+		}
+
+		if (WhatToCount == enWhatToCount::SmallLetters && islower(Text[i]))
+		{
+			Counter++;
+		}
+	}
+
+	return Counter;
+	
+}
 
 void CountLettersCaseOfWord(string Text, short &UpperCount, short &LowerCount)
 {
@@ -39,9 +64,9 @@ int main()
 
 	CountLettersCaseOfWord(Text, UpperCount, LowerCount);
 
-	cout << "\nString Length = " << Text.length() << endl;
-	cout << "\nCapital Letters Count = " << UpperCount << endl;
-	cout << "\nSmall Letter Count = " << LowerCount << endl;
+	cout << "\nString Length = " << CountLetters(Text) << endl;
+	cout << "\nCapital Letters Count = " << CountLetters(Text, enWhatToCount::CapitalLetters) << endl;
+	cout << "\nSmall Letter Count = " << CountLetters(Text, enWhatToCount::SmallLetters) << endl;
 
 	system("pause>0");
 
