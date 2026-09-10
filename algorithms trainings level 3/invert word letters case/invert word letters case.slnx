@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="invert word letters case.vcxproj" Id="bcf38e71-caff-412d-a09a-2dec39f23da8" />
+</Solution>
