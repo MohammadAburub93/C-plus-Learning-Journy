@@ -25,16 +25,28 @@ char ReadCharacter()
 	return Letter;
 }
 
-short CountLetterInWord(string Text, char Letter)
+char InvertCharacterCase(char Letter)
+{
+	return (isupper(Letter) ? tolower(Letter) : toupper(Letter));
+}
+
+short CountLetterInWord(string Text, char Letter, bool MatchCase = true)
 {
 	short Counter = 0;
 
 	for (short i = 0; i < Text.length(); i++)
 	{
-		if (Text[i] == Letter)
+		if (MatchCase)
 		{
-			Counter++;
+			if (Text[i] == Letter)
+				Counter++;
 		}
+		else
+		{
+			if (tolower(Text[i]) == tolower(Letter))
+				Counter++;
+		}
+		
 	}
 
 	return Counter;
@@ -46,7 +58,9 @@ int main()
 	char Letter = ReadCharacter();
 
 	cout << "\nLetter \'" << Letter << "\' Count = " << CountLetterInWord(Text, Letter) << endl;
-	
+	cout << "\nLetter \'" << Letter << "\'" << " or \'" << InvertCharacterCase(Letter);
+	cout << "\' Count = " << CountLetterInWord(Text, Letter, false) << endl;
+
 
 	system("pause>0");
 
