@@ -16,32 +16,22 @@ string ReadString()
 
 string TrimLeft(string Text)
 {
-	short PosToCheck = 0;
-
-	while (Text.at(PosToCheck) == ' ')
+	for (short i = 0; i < Text.length(); i++)
 	{
-		PosToCheck++;
+		if (Text[i] != ' ')
+			return Text.substr(i, Text.length() - i);
 	}
-
-	if (PosToCheck != 0)
-		Text.erase(0, PosToCheck);
-
-	return Text;
+	return "";
 }
 
 string TrimRight(string Text)
 {
-	short PosToCheck = Text.length() - 1;
-
-	while (Text.at(PosToCheck) == ' ')
+	for (short i = Text.length() - 1; i >= 0; i--)
 	{
-		PosToCheck--;
+		if (Text[i] != ' ')
+			return Text.substr(0, i + 1);
 	}
-
-	if (PosToCheck != (Text.length() - 1))
-		Text.erase(PosToCheck + 1, (Text.length() - 1));
-
-	return Text;
+	return "";
 }
 
 string TrimString(string Text)
