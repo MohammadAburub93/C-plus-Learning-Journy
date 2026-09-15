@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="count vowel letters in word.vcxproj" Id="e3b92d47-1f02-4f87-a008-704a8c550da2" />
+</Solution>
