@@ -15,26 +15,25 @@ string ReadString()
 
 void PrintEachWordOfString(string Text)
 {
-	bool IsLetter = true;
+	string delim = " ";
 
 	cout << "\nYour string words are: \n";
 
-	for (short i = 0; i < Text.length(); i++)
+	short pos = 0;
+	string word;
+
+	while ((pos = Text.find(delim)) != std::string::npos)
 	{
-		if (Text[i] != ' ' && IsLetter)
-		{
-			cout << Text[i];
-		}
+		word = Text.substr(0, pos);
 
+		if (word != "")
+			cout << word << endl;
 
-		if (Text[i + 1] == ' ')
-		{
-			IsLetter = false;
-			cout << endl;
-		}
-		else
-			IsLetter = true;
+		Text.erase(0, pos + delim.length());
 	}
+
+	if (Text != "")
+		cout << Text << "\n";
 }
 
 int main()
