@@ -38,40 +38,38 @@ vector <string> SplitString(string Text, string Delim)
 	return SplitResult;
 }
 
-string JoinString(vector <string> vString, string Delim, bool InReverse = false)
+string ReverseWordsInString(string Text)
 {
-	string JoinResult = "";
+	vector <string> vString;
 
-	if (InReverse)
+	string ReveresdString = "";
+
+	vString = SplitString(Text, " ");
+
+	vector <string> ::iterator iter = vString.end();
+
+	while (iter != vString.begin())
 	{
-		for (short i = vString.size() - 1; i >= 0; i--)
-		{
-			JoinResult = JoinResult + vString[i] + Delim;
-		}
-		return JoinResult.substr(0, (JoinResult.length() - Delim.length()));
+		--iter;
+
+		ReveresdString += *iter + " ";
 	}
-	else
-	{
-		for (string& word : vString)
-		{
-			JoinResult = JoinResult + word + Delim;
-		}
-		return JoinResult.substr(0, (JoinResult.length() - Delim.length()));
-	}
+
+	ReveresdString = ReveresdString.substr(0, (ReveresdString.length() - 1));
+
+	return ReveresdString;
 
 }
 
 int main()
 {
-	vector <string> vString;
-	string ReveresedString = "";
-
-	vString = SplitString(ReadString(), " ");
 	
-	ReveresedString = JoinString(vString, " ", true);
+	string Text;
+
+	Text = ReadString();
 
 	cout << "\nString after reversing string: \n";
-	cout << ReveresedString << endl;
+	cout << ReverseWordsInString(Text) << endl;
 
 	system("pause>0");
 
