@@ -50,7 +50,7 @@ string ReverseWordsInString(string Text)
 
 	while (iter != vString.begin())
 	{
-		--iter;
+		iter--;
 
 		ReveresdString += *iter + " ";
 	}
