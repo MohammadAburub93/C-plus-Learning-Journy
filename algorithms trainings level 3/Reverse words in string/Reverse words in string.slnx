@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Reverse words in string.vcxproj" Id="f4b6b19d-b9b1-4c47-94a7-7fa5e4a00a14" />
+</Solution>
