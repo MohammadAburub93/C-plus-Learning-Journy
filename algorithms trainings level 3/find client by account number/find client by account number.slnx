@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="find client by account number.vcxproj" Id="34c76f92-1095-4fda-acfd-975c6a25b3e4" />
+</Solution>
