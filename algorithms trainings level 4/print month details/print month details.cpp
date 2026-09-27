@@ -32,18 +32,9 @@ short NumberOfDaysInMonth(short Year, short Month)
 	if (Month < 1 || Month > 12)
 		return 0;
 
-	if (Month == 2)
-		return (IsLeapYear(Year) ? 29 : 28);
+	short NumberOfDays[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-	short arr31Days[12] = { 1, 3, 5, 7, 8, 10, 12 };
-
-	for (short i = 1; i <= 12; i++)
-	{
-		if (arr31Days[i - 1] == Month)
-			return 31;
-	}
-
-	return 30;
+	return (Month == 2 ? (IsLeapYear(Year) ? 29 : 28) : NumberOfDays[Month - 1]);
 
 }
 
