@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Day Name.vcxproj" Id="39da0f6a-72d0-4e24-84d8-27605e2b3bdd" />
+  <Project Path="month calender.vcxproj" Id="c337aeca-1f5e-49ec-8fb8-fa1daafb23da" />
 </Solution>
