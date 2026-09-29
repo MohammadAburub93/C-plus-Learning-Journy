@@ -76,9 +76,9 @@ bool IsLastMonthOfYear(short Month)
 
 stDate DateAfterAddingOneDay(stDate Date)
 {
-	if (IsLastDayOfMonth)
+	if (IsLastDayOfMonth(Date))
 	{
-		if (IsLastMonthOfYear)
+		if (IsLastMonthOfYear(Date.Month))
 		{
 			Date.Day = 1;
 			Date.Month = 1;
@@ -99,34 +99,21 @@ stDate DateAfterAddingOneDay(stDate Date)
 
 }
 
+bool IsDate1EqualDate2(stDate Date1, stDate Date2)
+{
+	return ((Date1.Year == Date2.Year && Date1.Month == Date2.Month && Date1.Day == Date2.Day) ? true : false);
+}
+
 int DiffBetweenDates(stDate Date1, stDate Date2, bool IncludeEndDay = false)
 {
 	int DiffDays = 0;
 
-	while (true)
+	while (!IsDate1EqualDate2(Date1, Date2))
 	{
-		if (Date1.Year == Date2.Year && Date1.Month == Date2.Month)
-		{
-			DiffDays += (Date2.Day - Date1.Day);
-			break;
-		}
-		else
-		{
-			DiffDays += (NumberOfDaysInMonth(Date1.Year, Date1.Month) - Date1.Day + 1);
-			if (IsLastMonthOfYear(Date1.Month))
-			{
-				Date1.Day = 1;
-				Date1.Month = 1;
-				Date1.Year++;
-			}
-			else
-			{ 
-				Date1.Day = 1;
-				Date1.Month++;
-			}
-		}
+		DiffDays++;
+		Date1 = DateAfterAddingOneDay(Date1);
 	}
-
+	
 	return (IncludeEndDay ? ++DiffDays : DiffDays);
 }
 

@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="diff between dates.vcxproj" />
+  <Project Path="diff between dates.vcxproj" Id="77cc3077-34ea-4e0d-8a7a-38a4f897d5d5" />
 </Solution>
