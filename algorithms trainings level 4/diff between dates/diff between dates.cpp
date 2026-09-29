@@ -104,17 +104,50 @@ bool IsDate1EqualDate2(stDate Date1, stDate Date2)
 	return ((Date1.Year == Date2.Year && Date1.Month == Date2.Month && Date1.Day == Date2.Day) ? true : false);
 }
 
+bool IsDate1BeforeDate2(stDate Date1, stDate Date2)
+{
+	return (Date1.Year < Date2.Year) ? true : ((Date1.Year ==
+		Date2.Year) ? (Date1.Month < Date2.Month ? true : (Date1.Month ==
+			Date2.Month ? Date1.Day < Date2.Day : false)) : false);
+}
+
+void SwapDates(stDate& Date1, stDate& Date2)
+{
+	stDate TempDate;
+
+	TempDate.Day = Date1.Day;
+	TempDate.Month = Date1.Month;
+	TempDate.Year = Date1.Year;
+
+	Date1.Day = Date2.Day;
+	Date1.Month = Date2.Month;
+	Date1.Year = Date2.Year;
+
+	Date2.Day = TempDate.Day;
+	Date2.Month = TempDate.Month;
+	Date2.Year = TempDate.Year;
+}
+
 int DiffBetweenDates(stDate Date1, stDate Date2, bool IncludeEndDay = false)
 {
 	int DiffDays = 0;
+	short SwapFlagValue = 1;
 
+	if (!IsDate1BeforeDate2(Date1, Date2))
+	{
+		SwapDates(Date1, Date2);
+		SwapFlagValue = -1;
+	}
+	
 	while (!IsDate1EqualDate2(Date1, Date2))
 	{
 		DiffDays++;
 		Date1 = DateAfterAddingOneDay(Date1);
 	}
 	
-	return (IncludeEndDay ? ++DiffDays : DiffDays);
+	
+	
+	return (IncludeEndDay ? ++DiffDays * SwapFlagValue : DiffDays * SwapFlagValue);
 }
 
 
