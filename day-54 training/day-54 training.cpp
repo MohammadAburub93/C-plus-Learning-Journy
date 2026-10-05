@@ -5,10 +5,17 @@ using namespace std;
 class clsPerson
 {
 private:
+	int _ID = 10;
 	string _FirstName;
 	string _LastName;
 
 public:
+
+	int ID()
+	{
+		return _ID;
+	}
+
 	void setFirstName(string FirstName)
 	{
 		_FirstName = FirstName;
@@ -43,6 +50,7 @@ int main()
 	Persson1.setFirstName("Mohammad");
 	Persson1.setLastName("Aburub");
 
+	cout << "User ID: " << Persson1.ID() << endl;
 	cout << "First Name: " << Persson1.FirstName() << endl;
 	cout << "Last Name: " << Persson1.LastName() << endl;
 	cout << "Full Name: " << Persson1.FullName() << endl;
