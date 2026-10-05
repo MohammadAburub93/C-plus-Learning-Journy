@@ -5,41 +5,23 @@ using namespace std;
 class clsPerson
 {
 private:
-	int _ID = 10;
+
 	string _FirstName;
-	string _LastName;
 
 public:
 
-	int ID()
-	{
-		return _ID;
-	}
-
-	void setFirstName(string FirstName)
+	void SetFirstName(string FirstName)
 	{
 		_FirstName = FirstName;
 	}
 
-	string FirstName()
+	string GetFirstName()
 	{
 		return _FirstName;
 	}
 
-	void setLastName(string LastName)
-	{
-		_LastName = LastName;
-	}
+	__declspec(property(get = GetFirstName, put = SetFirstName)) string FirstName;
 
-	string LastName()
-	{
-		return _LastName;
-	}
-
-	string FullName()
-	{
-		return (_FirstName + " " + _LastName);
-	}
 
 };
 
@@ -47,13 +29,11 @@ int main()
 {
 	clsPerson Persson1;
 
-	Persson1.setFirstName("Mohammad");
-	Persson1.setLastName("Aburub");
+	Persson1.SetFirstName("Mohammad");
+	cout << Persson1.GetFirstName() << endl;
 
-	cout << "User ID: " << Persson1.ID() << endl;
-	cout << "First Name: " << Persson1.FirstName() << endl;
-	cout << "Last Name: " << Persson1.LastName() << endl;
-	cout << "Full Name: " << Persson1.FullName() << endl;
+	Persson1.FirstName = "Mohammad";
+	cout << Persson1.FirstName;
 
 	system("pause>0");
 
