@@ -78,6 +78,9 @@ int main()
 
 	Address1.Print();
 
+	clsAddress Address2 = Address1;
+	Address2.Print();
+
 	system("pause>0");
 
 	return 0;
