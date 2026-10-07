@@ -12,12 +12,9 @@ private:
 
 public:
 
-	clsAddress(string AddressLine1, string AddressLine2, string POBox, string ZipCode)
+	clsAddress()
 	{
-		_AddressLine1 = AddressLine1;
-		_AddressLine2 = AddressLine2;
-		_POBox = POBox;
-		_ZipCode = ZipCode;
+		cout << "Hi, I'm constructor." << endl;
 	}
 
 	void SetAddressLine1(string AddressLine1)
@@ -69,17 +66,31 @@ public:
 		cout << "POBox       : " << _POBox << endl;
 		cout << "ZipCode     : " << _ZipCode << endl;
 	}
+
+	~clsAddress()
+	{
+		cout << "Hi, I'm destructor." << endl;
+	}
 };
+
+void Fun1()
+{
+	clsAddress Address1;
+}
+
+void Fun2()
+{
+	clsAddress* Address2 = new clsAddress;
+
+	delete Address2;
+}
 
 int main()
 {
 
-	clsAddress Address1("Dubai", "Al-Nakheel", "11123", "000000");
+	Fun1();
 
-	Address1.Print();
-
-	clsAddress Address2 = Address1;
-	Address2.Print();
+	Fun2();
 
 	system("pause>0");
 
