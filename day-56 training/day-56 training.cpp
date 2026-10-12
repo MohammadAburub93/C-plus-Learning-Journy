@@ -5,43 +5,27 @@ using namespace std;
 class clsA
 {
 public:
-	int var;
-	static int counter;
-
-	clsA()
+	
+	static int Function1()
 	{
-		counter++;
+		return 10;
 	}
 
-	void Print()
+	int Function2()
 	{
-		cout << "\nvar   = " << var << endl;
-		cout << "counter = " << counter << endl;
+		return 20;
 	}
+
 };
-
-int clsA::counter = 0;
 
 int main()
 {
 	clsA A1, A2, A3;
 
-	A1.var = 10;
-	A2.var = 20;
-	A3.var = 30;
+	cout << clsA::Function1() << endl;
 
-	A1.Print();
-	A2.Print();
-	A3.Print();
-
-	A1.counter = 500;
-
-	cout << "\nafter changing the static member counter in one object:\n";
-
-	A1.Print();
-	A2.Print();
-	A3.Print();
-
+	cout << A1.Function1() << endl;
+	cout << A1.Function2() << endl;
 
 	system("pause>0");
 
