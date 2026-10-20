@@ -2,23 +2,29 @@
 
 using namespace std;
 
-class clsPerson
+class clsEmployee
 {
 private:
 	int _ID;
 	string _FirstName;
 	string _LastName;
+	string _Title;
 	string _Email;
 	string _Phone;
+	float _Salary;
+	string _Department;
 
 public:
-	clsPerson(int ID, string FirstName, string LastName, string Email, string Phone)
+	clsEmployee(int ID, string FirstName, string LastName,string Title, string Email, string Phone, float Salary, string Department)
 	{
 		_ID = ID;
 		_FirstName = FirstName;
 		_LastName = LastName;
+		_Title = Title;
 		_Email = Email;
 		_Phone = Phone;
+		_Salary = Salary;
+		_Department = Department;
 	}
 
 	int GetID()
@@ -46,6 +52,16 @@ public:
 		return _LastName;
 	}
 
+	void SetTitle(string Title)
+	{
+		_Title= Title;
+	}
+
+	string GetTitle()
+	{
+		return _Title;
+	}
+
 	string GetFullName()
 	{
 		return _FirstName + " " + _LastName;
@@ -71,16 +87,39 @@ public:
 		return _Phone;
 	}
 
+	void SetSalary(float Salary)
+	{
+		_Salary = Salary;
+	}
+
+	float GetSalary()
+	{
+		return _Salary;
+	}
+
+	void SetDepartment(string Department)
+	{
+		_Department = Department;
+	}
+
+	string GetDepartment()
+	{
+		return _Department;
+	}
+
 	void Print()
 	{
-		cout << "Info: " << endl;
+		cout << "\nEmployee Info: " << endl;
 		cout << "\n---------------------------\n";
-		cout << "ID       :" << _ID << endl;
-		cout << "FirstName:" << _FirstName << endl;
-		cout << "LastName :" << _LastName << endl;
-		cout << "Full Name:" << GetFullName() << endl;
-		cout << "Email    :" << _Email << endl;
-		cout << "Phone    :" << _Phone << endl;
+		cout << "ID        :" << _ID << endl;
+		cout << "FirstName :" << _FirstName << endl;
+		cout << "LastName  :" << _LastName << endl;
+		cout << "Full Name :" << GetFullName() << endl;
+		cout << "Title     :" << _Title << endl;
+		cout << "Email     :" << _Email << endl;
+		cout << "Phone     :" << _Phone << endl;
+		cout << "Salary    :" << _Salary << endl;
+		cout << "Department:" << _Department << endl;
 		cout << "\n---------------------------\n";
 	}
 
@@ -103,11 +142,11 @@ public:
 
 int main()
 {
-	clsPerson Person1(7, "Mohammad", "Aburub", "Mo@test.com", "0123456789");
-	Person1.Print();
+	clsEmployee Employee1(7, "Mohammad", "Aburub", "Manager", "Mo@test.com", "0123456789", 5000, "Software Engineering");
+	Employee1.Print();
 
-	Person1.SendEmail("Hi", "How are you?");
-	Person1.SendSMS("How are you?");
+	Employee1.SendEmail("Hi", "How are you?");
+	Employee1.SendSMS("How are you?");
 
 	system("pause>0");
 
